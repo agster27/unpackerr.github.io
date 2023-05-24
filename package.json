@@ -1,7 +1,7 @@
 {
-  "name": "pollerdox",
-  "version": "0.0.0",
-  "private": true,
+  "name": "unpackerrdox",
+  "version": "0.0.1",
+  "private": false,
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -14,10 +14,10 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.1",
     "@docusaurus/preset-classic": "^2.4.1",
-    "@mdx-js/react": "^1.6.21",
-    "clsx": "^1.1.1",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "@mdx-js/react": "^2.3.0",
+    "clsx": "^1.2.1",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0"
   },
   "browserslist": {
     "production": [

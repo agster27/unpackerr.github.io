@@ -13,8 +13,6 @@ jobs:
           node-version: 18.x
           cache: yarn
       - name: Install Dependencies
-        working-directory: .
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: .
         run: yarn build

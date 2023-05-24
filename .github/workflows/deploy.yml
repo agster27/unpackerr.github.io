@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 jobs:
   deploy:
@@ -15,10 +15,8 @@ jobs:
           node-version: 18.x
           cache: yarn
       - name: Install Dependencies
-        working-directory: .
         run: yarn install --frozen-lockfile
       - name: Build website
-        working-directory: .
         run: yarn build
 
       # Popular action to deploy to GitHub Pages:
@@ -28,5 +26,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # Build output to publish to the `gh-pages` branch:
-          publish_dir: ./build
+          publish_dir: build
 
