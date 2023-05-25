@@ -1,4 +1,4 @@
-## Unpackerr
+# Unpackerr License and Copyright
 
 ```text
 MIT LICENSE.

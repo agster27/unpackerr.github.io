@@ -32,7 +32,7 @@ const features = [
     description: (
       <>
         Unpackerr can be installed on Linux, FreeBSD, macOS, Windows, Docker,
-        and you can even run it right from your home folder on a seedbox.
+        and you can even run it right from your home folder or on a seedbox.
       </>
     ),
   },

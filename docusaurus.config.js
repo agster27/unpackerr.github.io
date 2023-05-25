@@ -75,7 +75,7 @@ module.exports = {
       <a href="https://hub.docker.com/r/golift/unpackerr">&#9733; THIS PROJECT ON Docker Hub</a>
       </div><div class="col footer__col" style="text-align:left;">
       Copyright © 2018-${new Date().getFullYear()} Go Lift
-      </div><div class="col footer__col"><a href="https://golift.io"><img src="https://docs.golift.io/integrations/golift.png" /></a></div></div>`,
+      </div></div>`,
     },
   },
   presets: [
