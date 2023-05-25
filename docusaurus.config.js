@@ -12,7 +12,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: 'Unpackerr',
-        src: 'img/unpackerr.png',
+        src: 'img/icon.png',
       },
       items: [
         {

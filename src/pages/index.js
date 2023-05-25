@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 const features = [
   {
     title: 'Automated Extractions',
-    imageUrl: 'img/unpackerr.png',
+    imageUrl: 'img/logo.png',
     description: (
       <>
         Unpackerr was designed to make sure you never have to worry about
@@ -62,7 +62,7 @@ function Home() {
       description="Automated Archive Extractions">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title"><img alt="Unpackerr" src="img/logo.png" /></h1>
+          <h1 className="hero__title"><img alt="Unpackerr" src="img/unpackerr.png" /></h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link

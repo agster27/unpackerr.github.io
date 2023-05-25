@@ -51,11 +51,11 @@ too much? Let me know what knobs you need.
 Unpackerr will decompress archives of these types:
 
 - `rar`, `tar`, `tgz`, `gz`, `zip`, `7z`, `bz2`, `tbz2`, `iso`
-- Multi-file archives are supported with RAR and 7ZIP archives.
-- Password protected archived are supported with RAR and 7ZIP archives.
+- Multi-file archives are supported with RAR and 7ZIP formats.
+- Password protected archives are supported with RAR and 7ZIP formats.
 - Archives are detected by the file extension. ISO is disabled by default.
 
-## Logic
+## Starr Logic
 
 The application polls Radarr, Readarr, Sonarr and Lidarr at the `interval` configured.
 The queued items are inspected for completeness.
@@ -64,7 +64,7 @@ When Unpackerr finds an item in a starr app, the download location is checked fo
 archive file. If an extractable archive exists, and the starr app has `status=Completed`
 from your download client, Unpackerr will extract the file. Files are extracted to a
 temporary folder, and then moved back into the download location for
-_Completed DownloadHandling_ to import them. When the item falls out of the strr app
+_Completed Download Handling_ to import them. When the item falls out of the strr app
 queue, the extracted files are deleted.
 
 # Attribution
@@ -78,3 +78,4 @@ documentation support. This project succeeds because of them. Thank you!
 [![Docker Cloud](https://docs.golift.io/integrations/docker.png "Docker Cloud")](https://cloud.docker.com)
 [![Homebrew](https://docs.golift.io/integrations/homebrew.png "Homebrew")](https://brew.sh)
 [![Go Lift](https://docs.golift.io/integrations/golift.png "Go Lift")](https://golift.io)
+[![CloudFlare](https://docs.golift.io/integrations/cloudflare.png "CloudFlare")](https://cloudflare.com)

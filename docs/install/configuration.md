@@ -28,6 +28,8 @@ file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
 passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.
 
+Setting a log file is strongly recommend. This makes is much easier to troubleshoot problems.
+
 :::info Passwords
 If a wrong password is provided, the entire archive must
 be read before we know it's a bad password.
@@ -46,15 +48,15 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
-listen_addr|`UN_WEBSERVER_LISTEN_ADDR`| `0.0.0.0:5656` / ip:port to listen on. `0.0.0.0` is all IPs|
-log_file|`UN_WEBSERVER_LOG_FILE`|No default. Optionally provide a file path to write HTTP logs|
-log_files|`UN_WEBSERVER_LOG_FILES`|`10` / Log files to keep after rotating. `0` to disable|
-log_file_mb|`UN_WEBSERVER_LOG_FILE_MB`|`10` / Max size of HTTP log files in megabytes|
-ssl_cert_file|`UN_WEBSERVER_SSL_CERT_FILE`|No default. Path to SSL cert file to serve HTTPS|
-ssl_key_file|`UN_WEBSERVER_SSL_KEY_FILE`|No default. Path to SSL key file to serve HTTPS|
-urlbase|`UN_WEBSERVER_URLBASE`|`/` / Base URL path to serve HTTP content|
-upstreams|`UN_WEBSERVER_UPSTREAMS`|No default. List of upstream proxy CIDRs or IPs to trust|
+webserver.metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
+webserver.listen_addr|`UN_WEBSERVER_LISTEN_ADDR`| `0.0.0.0:5656` / ip:port to listen on. `0.0.0.0` is all IPs|
+webserver.log_file|`UN_WEBSERVER_LOG_FILE`|No default. Optionally provide a file path to write HTTP logs|
+webserver.log_files|`UN_WEBSERVER_LOG_FILES`|`10` / Log files to keep after rotating. `0` to disable|
+webserver.log_file_mb|`UN_WEBSERVER_LOG_FILE_MB`|`10` / Max size of HTTP log files in megabytes|
+webserver.ssl_cert_file|`UN_WEBSERVER_SSL_CERT_FILE`|No default. Path to SSL cert file to serve HTTPS|
+webserver.ssl_key_file|`UN_WEBSERVER_SSL_KEY_FILE`|No default. Path to SSL key file to serve HTTPS|
+webserver.urlbase|`UN_WEBSERVER_URLBASE`|`/` / Base URL path to serve HTTP content|
+webserver.upstreams|`UN_WEBSERVER_UPSTREAMS`|No default. List of upstream proxy CIDRs or IPs to trust|
 
 ## Sonarr
 

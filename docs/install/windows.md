@@ -50,7 +50,7 @@ of the Advanced System Settings windows.
 
 On your desktop, create a new text file named `unpackerr.reg` and put the following in it:
 
-```text
+```go
 Windows Registry Editor Version 5.00
 
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\unpackerr-Service]
@@ -102,6 +102,7 @@ Unpackerr will now start automatically whenever the Windows machine is booted up
 without the need for a user to be logged on.
 
 Path configuration:
+
 Press `Windows-R` and open `regedit.exe`. Scroll down to the following registry key: `Computer\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\unpackerr-Service`
 Under that registry key, double-click the `ImagePath` value and enter the proper
 path to the nssm.exe that you extracted previously. Click `Ok` then close Regedit.
