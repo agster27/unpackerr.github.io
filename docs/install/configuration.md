@@ -25,9 +25,13 @@ file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
 passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.
 
-_Note about about providing `passwords`. If a wrong password is provided, the entire archive must
-be read before we know it's a bad password. Providing many passwords here can drastically slow down
-extractions and cause extra disk IO. You may also specify a password file by prefixing it with `filepath:`_
+:::note Passwords
+If a wrong password is provided, the entire archive must
+be read before we know it's a bad password.
+Providing many passwords here can drastically slow down
+extractions and cause extra disk IO. You may also specify
+a password file by prefixing it with `filepath:`_
+:::
 
 ## Sonarr
 
@@ -151,7 +155,7 @@ UN_DATA_ERROR=
 
 ## Webhooks
 
-This application can send a POST webhook to a URL when an extraction begins, and again
+This application can send a `POST` webhook to a URL when an extraction begins, and again
 when it finishes. Configure 1 or more webhook URLs with the parameters below.
 Works great with [notifiarr.com](https://notifiarr.com). You can use
 [requestbin.com](https://requestbin.com/r/) to test and _see_ the payload.
@@ -171,14 +175,18 @@ webhook.template_path|`UN_WEBHOOK_0_TEMPLATE_PATH`|`""` / Instead of an internal
 webhook.template|`UN_WEBHOOK_0_TEMPLATE`|`""` / Instead of auto template selecton, force one; options below|
 webhook.content_type|`UN_WEBHOOK_0_CONTENT_TYPE`|`application/json` / Content-Type header sent to webhook|
 
-Event IDs (not all of these are used in webhooks): `0` = all,
-`1` = queued, `2` = extracting, `3` = extract failed, `4` = extracted,
-`5` = imported, `6` = deleting, `7` = delete failed, `8` = deleted
-
 ### Webhook Notes
 
-1. _`Nickname` should equal the `chat_id` value in Telegram webhooks._
-1. _`Channel` is used as destination channel for Slack. It's not used in others._
-1. _`Nickname` and `Channel` may be used as custom values in custom templates._
-1. _`Name` is only used in logs, but it's also available as a template value as `{{name}}`._
-1. Built-In Templates: `pushover`, `telegram`, `discord`, `notifiarr`, `slack`, `gotify`
+- _`Nickname` should equal the `chat_id` value in Telegram webhooks._
+- _`Channel` is used as destination channel for Slack. It's not used in others._
+- _`Nickname` and `Channel` may be used as custom values in custom templates._
+- _`Name` is only used in logs, but it's also available as a template value as `{{name}}`._
+- Built-In Templates: `pushover`, `telegram`, `discord`, `notifiarr`, `slack`, `gotify`.
+
+## Event IDs
+
+Event IDs are needed/used in command hooks and webhooks.
+
+`0` = all, `1` = queued, `2` = extracting,
+`3` = extract failed, `4` = extracted, `5` = imported,
+`6` = deleting, `7` = delete failed, `8` = deleted

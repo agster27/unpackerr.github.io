@@ -5,14 +5,16 @@ pagination_prev: unpackerr/introduction
 pagination_next: unpackerr/troubleshooting
 ---
 
-## What is a starr app?
-Lidarr, Prowlarr, Radarr, Readarr, Sonarr
+## 1. What is a starr app?
 
-## Why does Unpackerr show things I do not see in my starr app?
+Lidarr, Prowlarr, Radarr, Readarr, Sonarr, Whisparr
 
-Unpackerr uses the `unknown` item flag when requesting the queue. 
+## 2. Why does Unpackerr show things not in my starr app?
 
-Recently, starr apps do show unknown items by default. However, your installation may have shown unknown items disabled. 
+Unpackerr uses the `unknown` item flag when requesting the queue.
+
+Recently, starr apps do show unknown items by default. However,
+your installation may have shown unknown items disabled.
 
 #### Do This
 
@@ -21,6 +23,25 @@ Recently, starr apps do show unknown items by default. However, your installatio
 1. Click **Options** in the top right
 1. Check the box to enable **Show Unknown Items**.
 
-## What do I do with unknown items?
+## 3. What do I do with unknown items?
 
-These items are often caused by having incorrect or an absence of categories (or labels/tags depending on your download client). Make sure you configure categories in each starr app. Once those are configured, you should import or force-remove the unknown items to make them go away. Another common problem is the starr apps are unable to match the download to a know media type (book/movie/tv series/episode/song/etc.)
+These items are often caused by having incorrect or an absence of
+categories (or labels/tags depending on your download client).
+Make sure you configure categories in each starr app. Once those
+are configured, you should import or force-remove the unknown
+items to make them go away. Another common problem is the starr
+apps are unable to match the download to a know media type
+(book/movie/tv series/episode/song/etc.)
+
+## 4. Why aren't hard links working?
+
+The most common cause for this is that Unpackerr is running as,
+and writing files as a user other than the user that your starr
+apps run as. If you're in Docker, this is likely happening
+because the container was not started with the proper uid and gid.
+See the Permissions section on the [Docker](/docs/install/docker#permissions)
+page for more information on how to fix that problem.
+
+If you're running in Linux, see the Permissions section on the
+[Linux](/docs/install/linux#permissions) page for more information
+on how to fix the problem.

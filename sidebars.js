@@ -8,8 +8,8 @@ module.exports = {
         'install/docker',
         'install/freebsd',
         'install/macos',
-        'install/linux',
         'install/windows',
+        {"Linux": [ 'install/linux',  'install/noroot']},
         'install/configuration',
       ]
     },

@@ -4,5 +4,7 @@ rules '~MD030', # lists may have spaces before them
       '~MD034', # allow bare URLs because we put them in code blocks...
       '~MD046', # do not worry about code block style, it gets confused
       '~MD033', # what's wrong with inline html?
-      '~MD031'  # fenced code blocks wrapped in blank lines look terrible in lists.
+      '~MD031', # fenced code blocks wrapped in blank lines look terrible in lists.
+      '~MD001', # header levels may increment more than 1 at a time.
+      '~MD026'  # headers may end with punctuation, like question marks.
 style "./.style"
