@@ -2,7 +2,7 @@
 id: troubleshooting
 title: Tips & Tricks
 pagination_prev: unpackerr/faq
-pagination_next: unpackerr/introduction
+pagination_next: introduction
 ---
 
 - Make sure your Downloads location matches on all your applications!

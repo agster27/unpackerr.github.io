@@ -16,3 +16,11 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
+      - uses: codespell-project/actions-codespell@v2
+        with:
+          check_hidden: true
+          path: docs
+      - name: Run Markdown Lint
+        uses: actionshub/markdownlint@v2
+        with:
+          path: docs

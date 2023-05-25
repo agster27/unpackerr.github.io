@@ -16,6 +16,14 @@ pagination_next: install/configuration
 - View the logs by clicking the systray icon and `Logs` -> `View`.
 - Make a shortcut to the application in your Startup menu to run it when you login.
 
+:::caution Archive Access
+Requires access to your download location.
+Make sure you set the `path` variables correctly in the configuration.
+Even if they're set incorrectly this app makes a best effort attempt to
+locate your downloads. If Unpackerr can't find your downloads, then the
+`path` (or `paths`) variables need to be adjusted.
+:::
+
 ## Running unpackerr as a Windows service
 
 :::caution Community

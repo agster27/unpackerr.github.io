@@ -1,22 +1,23 @@
 ---
 id: linux
-title: Linux with-root
+title: Repository
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
 ---
 
-# Linux
+# Linux Repositories
 
-:::warning Root Access
+:::info Root Access
 This installation method requires root. If you don't have root on your shell,
-then check out the <a href="/docs/install/noroot">non-root directions</a>.
+then check out the <a href="/docs/install/seedbox">non-root directions</a>.
 :::
 
 ## Install
 
-Linux binaries are distributed through `yum` and `apt` repos. Using a repo allows
-easier upgrades and access to additional software. Use the command (script) below
-to automatically install the GoLift repo and unpackerr in one command.
+Linux binaries are distributed through `yum` and `apt` repositories.
+Using a repository allows easier upgrades and access to additional software.
+Use the command (script) below to automatically install the GoLift repo and
+unpackerr in one command.
 
 ```shell
 curl -s https://golift.io/repo.sh | sudo bash -s - unpackerr
@@ -28,6 +29,14 @@ After install, edit the config file and start the service:
 sudo nano /etc/unpackerr/unpackerr.conf
 sudo systemctl restart unpackerr
 ```
+
+:::caution Archive Access
+Requires access to your download location.
+Make sure you set the `path` variables correctly in the configuration.
+Even if they're set incorrectly this app makes a best effort attempt to
+locate your downloads. If Unpackerr can't find your downloads, then the
+`path` (or `paths`) variables need to be adjusted.
+:::
 
 ## Permissions
 

@@ -73,18 +73,8 @@ The following fine folks are providing their services, completely free! These se
 integrations are used for things like storage, building, compiling, distribution and
 documentation support. This project succeeds because of them. Thank you!
 
-<a title="PackageCloud" alt="PackageCloud" href="https://packagecloud.io">
-  <img src="https://docs.golift.io/integrations/packagecloud.png"/>
-</a>
-<a title="GitHub" alt="GitHub" href="https://GitHub.com">
-  <img src="https://docs.golift.io/integrations/octocat.png"/>
-</a>
-<a title="Docker Cloud" alt="Docker" href="https://cloud.docker.com">
-  <img src="https://docs.golift.io/integrations/docker.png"/>
-</a>
-<a title="Homebrew" alt="Homebrew" href="https://brew.sh">
-  <img src="https://docs.golift.io/integrations/homebrew.png"/>
-</a>
-<a title="Go Lift" alt="Go Lift" href="https://golift.io">
-  <img src="https://docs.golift.io/integrations/golift.png"/>
-</a>
+[![packagecloud](https://docs.golift.io/integrations/packagecloud.png "PackageCloud.io")](https://packagecloud.io)
+[![GitHub](https://docs.golift.io/integrations/octocat.png "GitHub")](https://GitHub.com)
+[![Docker Cloud](https://docs.golift.io/integrations/docker.png "Docker Cloud")](https://cloud.docker.com)
+[![Homebrew](https://docs.golift.io/integrations/homebrew.png "Homebrew")](https://brew.sh)
+[![Go Lift](https://docs.golift.io/integrations/golift.png "Go Lift")](https://golift.io)

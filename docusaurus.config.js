@@ -16,7 +16,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'docs/unpackerr/introduction',
+          to: 'docs/introduction',
           activeBasePath: 'docs',
           label: 'Documentation',
           position: 'left',

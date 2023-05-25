@@ -20,6 +20,14 @@ brew services start unpackerr
 
 The `brew services start` command will signal brew to start Unpackerr every time you login.
 
+:::caution Archive Access
+Requires access to your download location.
+Make sure you set the `path` variables correctly in the configuration.
+Even if they're set incorrectly this app makes a best effort attempt to
+locate your downloads. If Unpackerr can't find your downloads, then the
+`path` (or `paths`) variables need to be adjusted.
+:::
+
 ## App
 
 You can also use a GUI app on a Mac instead of CLI via Homebrew:

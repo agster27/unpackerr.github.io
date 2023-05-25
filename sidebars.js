@@ -1,15 +1,15 @@
 module.exports = {
   someSidebar: [
-    'unpackerr/introduction',
+    'introduction',
     {
       "Installation": [
         'install/choosemethod',
-        'install/dockercompose',
+        'install/compose',
         'install/docker',
         'install/freebsd',
         'install/macos',
         'install/windows',
-        {"Linux": [ 'install/linux',  'install/noroot']},
+        {"Linux": [ 'install/linux',  'install/seedbox']},
         'install/configuration',
       ]
     },

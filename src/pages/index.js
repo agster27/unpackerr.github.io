@@ -70,7 +70,7 @@ function Home() {
                 'button button--outline button--secondary button--lg',
                 styles.getStarted,
               )}
-              to={useBaseUrl('docs/unpackerr/introduction')}>
+              to={useBaseUrl('docs/introduction')}>
               Start Unpacking!
             </Link>
           </div>

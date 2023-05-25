@@ -1,11 +1,11 @@
 ---
 id: faq
 title: FAQs
-pagination_prev: unpackerr/introduction
+pagination_prev: introduction
 pagination_next: unpackerr/troubleshooting
 ---
 
-## 1. What is a starr app?
+## 1. What is a Starr app?
 
 Lidarr, Prowlarr, Radarr, Readarr, Sonarr, Whisparr
 
@@ -45,3 +45,8 @@ page for more information on how to fix that problem.
 If you're running in Linux, see the Permissions section on the
 [Linux](/docs/install/linux#permissions) page for more information
 on how to fix the problem.
+
+If hard links don't work **at all** it could indicate another problem
+with your starr app setup. See [TRaSH's Guides](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/)
+and the [Servarr Team's Docker Guide](https://wiki.servarr.com/docker-guide)
+for details on Docker path best-practices.

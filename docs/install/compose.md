@@ -1,5 +1,5 @@
 ---
-id: dockercompose
+id: compose
 title: Docker Compose
 pagination_prev: install/docker
 pagination_next: install/configuration

@@ -7,6 +7,9 @@ pagination_next: unpackerr/troubleshooting
 
 This is where to learn what each config item is, the default
 values for each item, and the name to use in an environment variable.
+You should use the data here along with the data in the
+[example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
+to paint the full picture of how to configure Unpackerr.
 
 ## Global Settings
 
@@ -25,13 +28,33 @@ file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
 passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.
 
-:::note Passwords
+:::info Passwords
 If a wrong password is provided, the entire archive must
 be read before we know it's a bad password.
 Providing many passwords here can drastically slow down
 extractions and cause extra disk IO. You may also specify
-a password file by prefixing it with `filepath:`_
+a password file by providing a "password" in this format: `filepath:/path/to/passwords.txt`
 :::
+
+## Webserver
+
+:::note Metrics
+The web server currently only provides prometheus metrics, which you can display in
+[Grafana](https://grafana.com/grafana/dashboards/18817-unpackerr/).
+It provides no UI. This may change in the future. The web server was added in v0.12.0.
+:::
+
+|Config Name|Variable Name|Default / Note|
+|---|---|---|
+metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
+listen_addr|`UN_WEBSERVER_LISTEN_ADDR`| `0.0.0.0:5656` / ip:port to listen on. `0.0.0.0` is all IPs|
+log_file|`UN_WEBSERVER_LOG_FILE`|No default. Optionally provide a file path to write HTTP logs|
+log_files|`UN_WEBSERVER_LOG_FILES`|`10` / Log files to keep after rotating. `0` to disable|
+log_file_mb|`UN_WEBSERVER_LOG_FILE_MB`|`10` / Max size of HTTP log files in megabytes|
+ssl_cert_file|`UN_WEBSERVER_SSL_CERT_FILE`|No default. Path to SSL cert file to serve HTTPS|
+ssl_key_file|`UN_WEBSERVER_SSL_KEY_FILE`|No default. Path to SSL key file to serve HTTPS|
+urlbase|`UN_WEBSERVER_URLBASE`|`/` / Base URL path to serve HTTP content|
+upstreams|`UN_WEBSERVER_UPSTREAMS`|No default. List of upstream proxy CIDRs or IPs to trust|
 
 ## Sonarr
 
@@ -172,7 +195,7 @@ webhook.ignore_ssl|`UN_WEBHOOK_0_IGNORE_SSL`|`false` / Ignore invalid SSL certif
 webhook.exclude|`UN_WEBHOOK_0_EXCLUDE`|`[]` / List of apps to exclude: radarr, sonarr, folders, etc|
 webhook.events|`UN_WEBHOOK_0_EVENTS`|`[0]` / List of event IDs to send (shown below)|
 webhook.template_path|`UN_WEBHOOK_0_TEMPLATE_PATH`|`""` / Instead of an internal template, provide your own|
-webhook.template|`UN_WEBHOOK_0_TEMPLATE`|`""` / Instead of auto template selecton, force one; options below|
+webhook.template|`UN_WEBHOOK_0_TEMPLATE`|`""` / Instead of auto template selection, force one; options below|
 webhook.content_type|`UN_WEBHOOK_0_CONTENT_TYPE`|`application/json` / Content-Type header sent to webhook|
 
 ### Webhook Notes
