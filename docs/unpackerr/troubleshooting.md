@@ -48,4 +48,3 @@ and write to your download location.
 
 Still having problems?
 [Let me know!](https://github.com/Unpackerr/unpackerr/issues/new)
-

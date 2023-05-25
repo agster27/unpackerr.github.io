@@ -24,5 +24,3 @@ also mount `/mnt/HostDownloads:/downloads` on your unpackerr container. If you m
 `/mnt/user/data:/data` on your starr apps, mount the same path on Unpackerr.
 **Make sure Unpackerr can find the downloads in the same place that Sonarr and Radarr find them.**
 :::
-
-

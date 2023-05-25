@@ -8,6 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: codespell-project/actions-codespell@v2
+        with:
+          check_hidden: true
+          path: docs
+      - name: Run Markdown Lint
+        uses: actionshub/markdownlint@main
+        with:
+          path: docs
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
@@ -16,11 +24,3 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
-      - uses: codespell-project/actions-codespell@v2
-        with:
-          check_hidden: true
-          path: docs
-      - name: Run Markdown Lint
-        uses: actionshub/markdownlint@v2
-        with:
-          path: docs

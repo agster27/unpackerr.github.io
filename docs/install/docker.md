@@ -13,7 +13,9 @@ The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpac
 
 ```shell
 docker pull golift/unpackerr
-docker run -d -v /mnt/HostDownloads:/downloads -e "UN_SONARR_0_URL=http://localhost:8989" -e "UN_SONARR_0_API_KEY=kjsdkasjdaksdj" golift/unpackerr
+docker run -d -v /mnt/HostDownloads:/downloads \
+  -e "UN_SONARR_0_URL=http://localhost:8989" \
+  -e "UN_SONARR_0_API_KEY=kjsdkasjdaksdj" golift/unpackerr
 docker logs <container id from docker run>
 ```
 

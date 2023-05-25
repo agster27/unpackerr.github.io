@@ -17,5 +17,3 @@ and on truenas no less. way to go
 - [Linux](/docs/install/linux) ([Seedbox](/docs/install/seedbox))
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
-
-

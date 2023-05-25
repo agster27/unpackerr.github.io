@@ -26,7 +26,7 @@ locate your downloads. If Unpackerr can't find your downloads, then the
 
 ## Running unpackerr as a Windows service
 
-:::caution Community
+:::caution Community Contribution
 The following content was provided by a community member, [IamGimli](https://github.com/IamGimli).
 :::
 
