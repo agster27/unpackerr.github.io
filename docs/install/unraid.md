@@ -6,7 +6,7 @@ pagination_next: install/configuration
 description: Install Unpackerr on your unRAID server!
 ---
 
-# unRAID Install
+## Install
 
 Unpackerr is available in the
 [Community Applications](https://github.com/selfhosters/unRAID-CA-templates/blob/main/templates/unpackerr.xml)
@@ -48,7 +48,7 @@ If the highlighted portions above are not identical to the one below, then thing
 ![](/img/screenshots/unraid/unpackerrmount.png "unapackerr mount")
 :::
 
-# Permissions
+## Permissions
 
 Set the UID and GID by adding `--user uid:gid` to the `Extra Parameters`
 section of the unraid template after enabling the `Advanced` view.
@@ -60,3 +60,12 @@ e.g. If Sonarr has `PUID` of `1000` and `PGID` of `100`, then you must
 add **`--user 1000:100`** to `Extra Parameters` as shown below.
 
 ![](/img/screenshots/unraid/extraparameters.png "extra parameters")
+
+## Video Guide
+
+This guide is provided by a community member, [@Celsian](https://www.youtube.com/@Celsian),
+consider giving him a sub and a like.
+
+<iframe height="500" width="100%" src="https://www.youtube.com/embed/FfJqgm69ydA"
+frameborder="0" allowfullscreen title="UnRAID Video Guide"
+allow="accelerometer: autoplay:clipboard-write; encrypted-media;gyroscope; picture-in-picture" />

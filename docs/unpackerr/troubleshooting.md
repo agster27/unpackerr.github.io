@@ -41,4 +41,3 @@ Default Log files:
 
 Still having problems?
 [Let us know](https://github.com/Unpackerr/unpackerr/issues/new) or [find help on Discord](https://golift.io/discord).
-

@@ -1,6 +1,7 @@
 # unpackerr.zip
 
-This repository contains the source and files that create https://unpackerr.zip.
+[This repository](https://github.com/Unpackerr/unpackerr.github.io)
+contains the source and files that create [https://unpackerr.zip](https://unpackerr.zip).
 
 ## Website
 
@@ -8,7 +9,7 @@ This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern 
 
 ## Installation
 
-Do this first.
+Clone the repo, then cd into the new folder and run this first.
 
 ```console
 yarn install

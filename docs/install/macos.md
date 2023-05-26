@@ -29,7 +29,7 @@ The `brew services start` command will signal brew to start Unpackerr every time
 
 You can also use a GUI app on a Mac instead of CLI via Homebrew:
 
-:::note brew vs app
+:::info brew vs app
 The `.app` and the Homebrew version are the same application, but one runs in GUI mode and one does not.
 :::
 
