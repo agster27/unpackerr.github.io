@@ -45,6 +45,8 @@ user or group read and write access to your archives. That may mean adding the `
 user, for example, to the `debian-transmission` group.
 You would do that with a command such as `sudo usermod -aG debian-transmission unpackerr`
 
+### Change the uid/gid
+
 If you wish to change the user and/or group that unpackerr runs as you need to do exactly this, **and only this**:
 
 1. Make this folder: `sudo mkdir -p /etc/systemd/system/unpackerr.service.d/`

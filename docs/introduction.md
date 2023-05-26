@@ -7,7 +7,7 @@ pagination_next: install/choosemethod
 
 Unpackerr is an application that runs on Windows, macOS, Linux, FreeBSD and in Docker.
 You can use it to watch a download folder and extract new items.
-The more common use is to watch starr apps (radarr, sonarr, readarr,lidarr, whisparr)
+The more common use is to watch starr apps (radarr, sonarr, readarr, lidarr, whisparr)
 and extract items they download. It can do both, at the same time even.
 
 ## Features
@@ -64,7 +64,7 @@ When Unpackerr finds an item in a starr app, the download location is checked fo
 archive file. If an extractable archive exists, and the starr app has `status=Completed`
 from your download client, Unpackerr will extract the file. Files are extracted to a
 temporary folder, and then moved back into the download location for
-_Completed Download Handling_ to import them. When the item falls out of the strr app
+_Completed Download Handling_ to import them. When the item falls out of the starr app
 queue, the extracted files are deleted.
 
 # Attribution

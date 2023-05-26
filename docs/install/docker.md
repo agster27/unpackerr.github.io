@@ -1,9 +1,11 @@
 ---
 id: docker
-title: Docker
+title: Docker Basics
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
 ---
+
+# Docker Installation
 
 This project builds automatically in [Docker Cloud](https://hub.docker.com/r/golift/unpackerr) and creates
 [ready-to-use multi-architecture images](https://hub.docker.com/r/golift/unpackerr/tags) images.
@@ -43,12 +45,6 @@ docker run -d -v /mnt/HostDownloads:/downloads -v /folder/with/config/file:/conf
 docker logs <container id from docker run>
 ```
 
-## unRAID
-
-- Unpackerr is available in the
-    [Community Applications](https://github.com/selfhosters/unRAID-CA-templates/blob/main/templates/unpackerr.xml)
-    on unRAID. Install it from the `Apps` page.
-
 ## More Dockers
 
  If you want a container that has a bit more to it, you can try a third party option.
@@ -79,8 +75,3 @@ Pass the `PUID` and `PGID` env variables when using hotio's container. Example:
 # This commands runs hotio/unpackerr with UID 1000 and GID 100.
 docker run -e PUID=1000 -e PGID=100 -d -v /mnt/data:/data -v /mnt/config:/config hotio/unpackerr
 ```
-
-### unRAID Users
-
-Set the UID and GID by adding `--user 1000:100` to the `Extra Parameters`
-section of the unraid template after enabling the `Advanced` view.

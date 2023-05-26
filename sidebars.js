@@ -4,8 +4,7 @@ module.exports = {
     {
       "Installation": [
         'install/choosemethod',
-        'install/compose',
-        'install/docker',
+        {"Docker": [ 'install/docker', 'install/compose', 'install/unraid']},
         'install/freebsd',
         'install/macos',
         'install/windows',
