@@ -6,17 +6,13 @@ pagination_next: install/configuration
 description: Install Unpackerr on a FreeBSD server.
 ---
 
+import ArchiveAccess from './includes/archiveaccess.md';
+
 1. Download a package from the [Releases](https://github.com/Unpackerr/unpackerr/releases) page.
 1. Install it, edit config, start it.
 1. Not many folks use FreeBSD, but we can try to help if you drop by the [Discord](https://golift.io/discord).
 
-:::caution Archive Access
-Requires access to your download location.
-Make sure you set the `path` variables correctly in the configuration.
-Even if they're set incorrectly this app makes a best effort attempt to
-locate your downloads. If Unpackerr can't find your downloads, then the
-`path` (or `paths`) variables need to be adjusted.
-:::
+<ArchiveAccess />
 
 ## Permissions
 

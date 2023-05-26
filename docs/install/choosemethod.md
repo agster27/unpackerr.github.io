@@ -13,6 +13,8 @@ TODO: describe how native is better, but we acquiece to docker being the thing y
 and on truenas no less. way to go
 :::
 
+Installation instructions available:
+
 - [Docker](/docs/install/docker) ([Compose](/docs/install/compose))
 - [FreeBSD](/docs/install/freebsd)
 - [Linux](/docs/install/linux) ([Seedbox](/docs/install/seedbox))

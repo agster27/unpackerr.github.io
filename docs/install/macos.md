@@ -6,6 +6,8 @@ pagination_next: install/configuration
 description: Install Unpackerr on a macOS system.
 ---
 
+import ArchiveAccess from './includes/archiveaccess.md';
+
 ## Brew
 
 1. Use homebrew.
@@ -21,13 +23,7 @@ brew services start unpackerr
 
 The `brew services start` command will signal brew to start Unpackerr every time you login.
 
-:::caution Archive Access
-Requires access to your download location.
-Make sure you set the `path` variables correctly in the configuration.
-Even if they're set incorrectly this app makes a best effort attempt to
-locate your downloads. If Unpackerr can't find your downloads, then the
-`path` (or `paths`) variables need to be adjusted.
-:::
+<ArchiveAccess />
 
 ## App
 

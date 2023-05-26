@@ -6,6 +6,8 @@ pagination_next: install/configuration
 description: Install Unpackerr on a Windows system.
 ---
 
+import ArchiveAccess from './includes/archiveaccess.md';
+
 # Windows Installation
 
 - Extract a `.exe.zip` file from [the Releases page](https://github.com/Unpackerr/unpackerr/releases)
@@ -17,17 +19,11 @@ description: Install Unpackerr on a Windows system.
 - View the logs by clicking the systray icon and `Logs` -> `View`.
 - Make a shortcut to the application in your Startup menu to run it when you login.
 
-:::caution Archive Access
-Requires access to your download location.
-Make sure you set the `path` variables correctly in the configuration.
-Even if they're set incorrectly this app makes a best effort attempt to
-locate your downloads. If Unpackerr can't find your downloads, then the
-`path` (or `paths`) variables need to be adjusted.
-:::
+<ArchiveAccess />
 
 ## Running unpackerr as a Windows service
 
-:::caution Community Contribution
+:::info Community Contribution
 The following content was provided by a community member, [IamGimli](https://github.com/IamGimli).
 :::
 

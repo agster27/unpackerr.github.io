@@ -6,6 +6,8 @@ pagination_next: install/configuration
 description: Install Unpackerr on a Linux server without root.
 ---
 
+import ArchiveAccess from './includes/archiveaccess.md';
+
 # Linux Seedbox
 
 Learn how to install Unpackerr on your linux shell without root.
@@ -17,13 +19,7 @@ Learn how to install Unpackerr on your linux shell without root.
 1. Put both on your Linux shell server, in an `~/unapckerr/` folder.
 1. Run Unpackerr in the background, `screen` is the easiest way to do so.
 
-:::caution Archive Access
-Requires access to your download location.
-Make sure you set the `path` variables correctly in the configuration.
-Even if they're set incorrectly this app makes a best effort attempt to
-locate your downloads. If Unpackerr can't find your downloads, then the
-`path` (or `paths`) variables need to be adjusted.
-:::
+<ArchiveAccess />
 
 Here's a simple script that automates the above steps.
 You should take some time to understand how [screen](https://wiki.archlinux.org/title/GNU_Screen)
