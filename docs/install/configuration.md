@@ -3,6 +3,7 @@ id: configuration
 title: Application Configuration
 pagination_prev: install/choosemethod
 pagination_next: unpackerr/troubleshooting
+description: Unpackerr configurations explained.
 ---
 
 This is where to learn what each config item is, the default

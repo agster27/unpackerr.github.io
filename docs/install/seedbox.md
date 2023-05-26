@@ -3,6 +3,7 @@ id: seedbox
 title: Seedbox
 pagination_prev: install/linux
 pagination_next: install/configuration
+description: Install Unpackerr on a Linux server without root.
 ---
 
 # Linux Seedbox

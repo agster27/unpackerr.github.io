@@ -3,6 +3,7 @@ id: compose
 title: Docker Compose
 pagination_prev: install/docker
 pagination_next: install/configuration
+description: Install Unpackerr with Docker Compose!
 ---
 
 - Copy the [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)

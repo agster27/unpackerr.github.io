@@ -3,6 +3,7 @@ id: docker
 title: Docker Basics
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
+description: Install Unpackerr using Docker!
 ---
 
 # Docker Installation

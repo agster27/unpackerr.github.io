@@ -3,6 +3,7 @@ id: linux
 title: Repository
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
+description: Install Unpackerr on a Linux server.
 ---
 
 # Linux Repositories

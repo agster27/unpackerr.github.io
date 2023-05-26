@@ -3,6 +3,7 @@ id: choosemethod
 title: Choose Install Method
 pagination_prev: introduction
 pagination_next: null
+description: Choose an Unpackerr install method.
 ---
 
 :::warning shovels and pick axes

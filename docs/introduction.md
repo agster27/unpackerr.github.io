@@ -3,6 +3,7 @@ id: introduction
 title: Introduction
 pagination_prev: null
 pagination_next: install/choosemethod
+description: Introduction and explanation of Unpackerr.
 ---
 
 Unpackerr is an application that runs on Windows, macOS, Linux, FreeBSD and in Docker.

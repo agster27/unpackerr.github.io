@@ -3,6 +3,7 @@ id: troubleshooting
 title: Tips & Tricks
 pagination_prev: unpackerr/faq
 pagination_next: introduction
+description: Tips and Tricks for troubleshooting Unpackerr installations.
 ---
 
 - Make sure your Downloads location matches on all your applications!

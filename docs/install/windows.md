@@ -3,6 +3,7 @@ id: windows
 title: Windows
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
+description: Install Unpackerr on a Windows system.
 ---
 
 # Windows Installation
