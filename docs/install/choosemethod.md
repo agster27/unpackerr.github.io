@@ -32,7 +32,7 @@ while files are still being downloaded.
 
 :::tip CPU Hog
 Unpackerr uses a lot CPU, and tends not to work well when running on smaller systems like Synology NAS devices.
-Running Unpackerr on a system with a large CPU is ideal to avoid system performance degredation.
+Running Unpackerr on a system with a large CPU is ideal to avoid system performance degradation.
 :::
 
 - [Docker](/docs/install/docker): [Compose](/docs/install/compose), [unRAID](/docs/install/unraid)

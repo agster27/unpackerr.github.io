@@ -6,6 +6,18 @@ pagination_next: unpackerr/troubleshooting
 description: Frequently asked questions about Unpackerr installation and troubleshooting.
 ---
 
+## 0. Why do I need Unpackerr?
+
+Great question! It has two answers.
+
+1. If you've ever had things stuck in your Starr app queues because they are RAR (or z7, etc)
+   files then you've been in the situation Unpackerr fixes. If this is a common occurrence, then
+   Unpackerr is for you. If you don't download compressed files, we're happy to admit this isn't
+   for you.
+1. Unpackerr can also extract files in a _watched_ (download) folder. If you download a lot of
+   stuff and like it to be automatically extracted, then you can use Unpackerr for that purpose
+   as well. No Starr apps required; just something that downloads files.
+
 ## 1. What is a Starr app?
 
 Lidarr, Prowlarr, Radarr, Readarr, Sonarr, Whisparr
