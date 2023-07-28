@@ -10,11 +10,20 @@ import ArchiveAccess from './includes/archiveaccess.md';
 
 # Windows Installation
 
+:::tip Install Location
+A default Windows install runs from `C:\`; if you installed Windows in another location, then replace it accordingly.
+:::
+
+- Browse to `C:\ProgramData` and create a folder named `unpackerr` and then inside that create a `logs` directory.
+  - Enable hidden files and folders if you dont see `C:\ProgramData`.
+  - End result: `C:\ProgramData\unpackerr` and `C:\ProgramData\unpackerr\logs`
 - Extract a `.exe.zip` file from [the Releases page](https://github.com/Unpackerr/unpackerr/releases)
-  into a folder like `C:\Program Files\unpackerr\`.
+  into  `C:\ProgramData\unpackerr\`.
 - Run the `unpackerr.amd64.exe` binary. This starts the app in the system tray.
 - Click the systray icon and select `Config` -> `Edit`.
-- Edit the config to suit your system and save.
+- Uncomment `log_file` (remove the `#`) and set it as shown here:
+  - `log_file = 'C:\ProgramData\unpackerr\logs\unpackerr.log'`
+- Edit the rest of the config to suit your system and save the file.
 - Click the systray icon again and select `Quit`. Then open the app again.
 - View the logs by clicking the systray icon and `Logs` -> `View`.
 - Make a shortcut to the application in your Startup menu to run it when you login.
