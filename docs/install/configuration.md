@@ -17,6 +17,10 @@ to paint the full picture of how to configure Unpackerr.
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 debug|`UN_DEBUG`|`false` / Turns on more logs|
+quiet|`UN_QUIIET`|`false` / Do not print logs to stdout or stderr|
+error_stderr|`UN_ERROR_STDERR`|`false` / Print ERROR lines to stderr instead of stdout.|
+activity|`UN_ACTIVITY`|`false` / Setting true will print only queue counts with activity.|
+log_queues|`UN_LOG_QUEUES`|`1m` / Uses Go Duration. How often to print internal counters.|
 log_file|`UN_LOG_FILE`|None by default. Optionally provide a file path to write logs|
 log_files|`UN_LOG_FILES`|`10` / Log files to keep after rotating. `0` disables rotation|
 log_file_mb|`UN_LOG_FILE_MB`|`10` / Max size of log files in megabytes|
@@ -126,6 +130,7 @@ folder.delete_original|`UN_FOLDER_0_DELETE_ORIGINAL`|`false` Delete archives aft
 folder.delete_files|`UN_FOLDER_0_DELETE_FILES`|`false` Delete extracted files after successful extraction|
 folder.move_back|`UN_FOLDER_0_MOVE_BACK`|`false` Move extracted items back into original folder|
 folder.extract_isos|`UN_FOLDER_0_EXTRACT_ISOS`|`false` Setting this to true enables .iso file extraction|
+folder.disable_recursion|`UN_FOLDER_0_DISABLE_RECURSION`|`false` Setting this to true disables extracting archives inside archives|
 
 ## Command Hooks
 
