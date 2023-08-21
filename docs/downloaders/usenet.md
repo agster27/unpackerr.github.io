@@ -17,6 +17,8 @@ In the categories tab, there's a processing option.
 This is what causes sab to unpack the files instead of unpackerr.
 Select an option that is not `default` nor `+unpack`.
 
+[See more on this topic](https://github.com/Unpackerr/unpackerr/issues/285).
+
 # NZBGet
 
 This is depressing, but...
