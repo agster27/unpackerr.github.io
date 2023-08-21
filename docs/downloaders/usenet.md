@@ -13,7 +13,9 @@ Find information about Usenet download clients on this page. It's a bit sparse, 
 
 # SabNZBd
 
-In the categories tab, there's a processing option - this is what causes sab to unpack the files instead of unpackerr. Select an option that isn't `default` or `+unpack`.
+In the categories tab, there's a processing option.
+This is what causes sab to unpack the files instead of unpackerr.
+Select an option that is not `default` nor `+unpack`.
 
 # NZBGet
 
