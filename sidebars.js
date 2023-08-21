@@ -13,7 +13,7 @@ module.exports = {
       ]
     },
     'unpackerr/faq',
-    'unpackerr/troubleshooting',
+    {'Tips & Tricks': [ 'unpackerr/troubleshooting', 'downloaders/torrent', 'downloaders/usenet']},
     {
       type: 'html',
       value: '<a href="https://golift.io"><img src="https://docs.golift.io/integrations/golift.png" /></a>',

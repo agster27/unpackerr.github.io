@@ -16,7 +16,7 @@ Great question! It has two answers.
    for you.
 1. Unpackerr can also extract files in a _watched_ (download) folder. If you download a lot of
    stuff and like it to be automatically extracted, then you can use Unpackerr for that purpose
-   as well. No Starr apps required; just something that downloads files.
+   as well. No Starr apps required; just something that downloads archives to folders.
 
 ## 1. What is a Starr app?
 
