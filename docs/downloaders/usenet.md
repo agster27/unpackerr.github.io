@@ -11,7 +11,7 @@ description: Information about usenet downloaders.
 Find information about Usenet download clients on this page. It's a bit sparse, so please help us
 [edit this page](https://github.com/Unpackerr/unpackerr.github.io/blob/main/docs/downloaders/usenet.md).
 
-## SabNZBd
+## SABnzbd
 
 In the categories tab, there's a processing option.
 This is what causes sab to unpack the files instead of unpackerr.
