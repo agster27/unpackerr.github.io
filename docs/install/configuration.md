@@ -31,7 +31,8 @@ max_retries|`UN_MAX_RETRIES`|`3` / Times to retry failed extractions. `0` = unli
 parallel|`UN_PARALLEL`|`1` / Concurrent extractions, only recommend `1`|
 file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
-passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.
+passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
+folder.interval|`UN_FOLDER_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
 
 Setting a log file is strongly recommend. This makes is much easier to troubleshoot problems.
 
