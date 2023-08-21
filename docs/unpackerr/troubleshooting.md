@@ -1,8 +1,8 @@
 ---
 id: troubleshooting
-title: Tips & Tricks
+title: Troubleshooting
 pagination_prev: unpackerr/faq
-pagination_next: introduction
+pagination_next: downloaders/torrent
 description: Tips and Tricks for troubleshooting Unpackerr installations.
 ---
 

@@ -17,6 +17,10 @@ to paint the full picture of how to configure Unpackerr.
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 debug|`UN_DEBUG`|`false` / Turns on more logs|
+quiet|`UN_QUIIET`|`false` / Do not print logs to stdout or stderr|
+error_stderr|`UN_ERROR_STDERR`|`false` / Print ERROR lines to stderr instead of stdout.|
+activity|`UN_ACTIVITY`|`false` / Setting true will print only queue counts with activity.|
+log_queues|`UN_LOG_QUEUES`|`1m` / Uses Go Duration. How often to print internal counters.|
 log_file|`UN_LOG_FILE`|None by default. Optionally provide a file path to write logs|
 log_files|`UN_LOG_FILES`|`10` / Log files to keep after rotating. `0` disables rotation|
 log_file_mb|`UN_LOG_FILE_MB`|`10` / Max size of log files in megabytes|
@@ -27,7 +31,8 @@ max_retries|`UN_MAX_RETRIES`|`3` / Times to retry failed extractions. `0` = unli
 parallel|`UN_PARALLEL`|`1` / Concurrent extractions, only recommend `1`|
 file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
-passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.
+passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
+folder.interval|`UN_FOLDER_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
 
 Setting a log file is strongly recommend. This makes is much easier to troubleshoot problems.
 
@@ -126,6 +131,7 @@ folder.delete_original|`UN_FOLDER_0_DELETE_ORIGINAL`|`false` Delete archives aft
 folder.delete_files|`UN_FOLDER_0_DELETE_FILES`|`false` Delete extracted files after successful extraction|
 folder.move_back|`UN_FOLDER_0_MOVE_BACK`|`false` Move extracted items back into original folder|
 folder.extract_isos|`UN_FOLDER_0_EXTRACT_ISOS`|`false` Setting this to true enables .iso file extraction|
+folder.disable_recursion|`UN_FOLDER_0_DISABLE_RECURSION`|`false` Setting this to true disables extracting archives inside archives|
 
 ## Command Hooks
 
