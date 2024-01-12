@@ -21,6 +21,10 @@ description: Tips and Tricks for troubleshooting Unpackerr installations.
     - Sonarr: `/mnt/user/data:/data`
     - Qbittorrent: `/mnt/user/data/downloads:/downloads`
     - Unpackerr: `/mnt/user/data/:/downloads`
+- _Example 3._
+    - Sonarr: `/mnt/user/data:/data`
+    - Qbittorrent: `/mnt/user/data/torrents:/data/torrents`
+    - Unpackerr: `/mnt/user/data/torrents:/data`
 - **Common Good Path Examples that will work**:
   - _Example 1._
     - Sonarr: `/mnt/user/data:/data`
