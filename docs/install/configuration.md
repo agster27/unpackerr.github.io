@@ -20,7 +20,7 @@ to paint the full picture of how to configure Unpackerr.
 - If you need more than one Starr app, add another `[[header]]` for that app.
 - Example with two Radarrs:
 
-```
+```toml
 [[radarr]]
 url = "http://radarr"
 api_key = "32characters"
