@@ -6,7 +6,7 @@ pagination_next: install/choosemethod
 description: eXtractor Tool
 ---
 
-This tool makes it extremely easy to decompress your entire downloads folder. 
+This tool makes it extremely easy to decompress your entire downloads folder.
 It recursively decompresses archives from any file system path provided.
 
 GitHub Repo: https://github.com/Unpackerr/xt
