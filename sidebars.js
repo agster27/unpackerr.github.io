@@ -19,5 +19,6 @@ module.exports = {
       value: '<a href="https://golift.io"><img src="https://docs.golift.io/integrations/golift.png" /></a>',
       defaultStyle: true,
     },
+    "xt",
   ],
 };
