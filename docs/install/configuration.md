@@ -12,27 +12,44 @@ You should use the data here along with the data in the
 [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
 to paint the full picture of how to configure Unpackerr.
 
+## Config File Notes
+
+- To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
+- When using a config file you must uncomment at minimum the `[[header]]` (`[[radarr]]`), `url` and `api_key`.
+- Uncomment means remove the hash `#` at the beginning of the line.
+- If you need more than one Starr app, add another `[[header]]` for that app.
+- Example with two Radarrs:
+    ```
+    [[radarr]]
+    url = "http://radarr"
+    api_key = "32characters"
+
+    [[radarr]]
+    url = "http://radarr4k"
+    api_key = "32morecharacters"
+    ```
+
 ## Global Settings
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-debug|`UN_DEBUG`|`false` / Turns on more logs|
-quiet|`UN_QUIIET`|`false` / Do not print logs to stdout or stderr|
-error_stderr|`UN_ERROR_STDERR`|`false` / Print ERROR lines to stderr instead of stdout.|
-activity|`UN_ACTIVITY`|`false` / Setting true will print only queue counts with activity.|
-log_queues|`UN_LOG_QUEUES`|`1m` / Uses Go Duration. How often to print internal counters.|
-log_file|`UN_LOG_FILE`|None by default. Optionally provide a file path to write logs|
-log_files|`UN_LOG_FILES`|`10` / Log files to keep after rotating. `0` disables rotation|
-log_file_mb|`UN_LOG_FILE_MB`|`10` / Max size of log files in megabytes|
-interval|`UN_INTERVAL`|`2m` / How often apps are polled, recommend `1m` to `5m`|
-start_delay|`UN_START_DELAY`|`1m` / Files are queued at least this long before extraction|
-retry_delay|`UN_RETRY_DELAY`|`5m` / Failed extractions are retried after at least this long|
-max_retries|`UN_MAX_RETRIES`|`3` / Times to retry failed extractions. `0` = unlimited.|
-parallel|`UN_PARALLEL`|`1` / Concurrent extractions, only recommend `1`|
-file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
-dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
-passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
-folder.interval|`UN_FOLDER_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
+|debug|`UN_DEBUG`|`false` / Turns on more logs|
+|quiet|`UN_QUIIET`|`false` / Do not print logs to stdout or stderr|
+|error_stderr|`UN_ERROR_STDERR`|`false` / Print ERROR lines to stderr instead of stdout.|
+|activity|`UN_ACTIVITY`|`false` / Setting true will print only queue counts with activity.|
+|log_queues|`UN_LOG_QUEUES`|`1m` / Uses Go Duration. How often to print internal counters.|
+|log_file|`UN_LOG_FILE`|None by default. Optionally provide a file path to write logs|
+|log_files|`UN_LOG_FILES`|`10` / Log files to keep after rotating. `0` disables rotation|
+|log_file_mb|`UN_LOG_FILE_MB`|`10` / Max size of log files in megabytes|
+|interval|`UN_INTERVAL`|`2m` / How often apps are polled, recommend `1m` to `5m`|
+|start_delay|`UN_START_DELAY`|`1m` / Files are queued at least this long before extraction|
+|retry_delay|`UN_RETRY_DELAY`|`5m` / Failed extractions are retried after at least this long|
+|max_retries|`UN_MAX_RETRIES`|`3` / Times to retry failed extractions. `0` = unlimited.|
+|parallel|`UN_PARALLEL`|`1` / Concurrent extractions, only recommend `1`|
+|file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
+|dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
+|passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
+|folder.interval|`UN_FOLDER_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
 
 Setting a log file is strongly recommend. This makes is much easier to troubleshoot problems.
 
@@ -54,67 +71,67 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-webserver.metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
-webserver.listen_addr|`UN_WEBSERVER_LISTEN_ADDR`| `0.0.0.0:5656` / ip:port to listen on. `0.0.0.0` is all IPs|
-webserver.log_file|`UN_WEBSERVER_LOG_FILE`|No default. Optionally provide a file path to write HTTP logs|
-webserver.log_files|`UN_WEBSERVER_LOG_FILES`|`10` / Log files to keep after rotating. `0` to disable|
-webserver.log_file_mb|`UN_WEBSERVER_LOG_FILE_MB`|`10` / Max size of HTTP log files in megabytes|
-webserver.ssl_cert_file|`UN_WEBSERVER_SSL_CERT_FILE`|No default. Path to SSL cert file to serve HTTPS|
-webserver.ssl_key_file|`UN_WEBSERVER_SSL_KEY_FILE`|No default. Path to SSL key file to serve HTTPS|
-webserver.urlbase|`UN_WEBSERVER_URLBASE`|`/` / Base URL path to serve HTTP content|
-webserver.upstreams|`UN_WEBSERVER_UPSTREAMS`|No default. List of upstream proxy CIDRs or IPs to trust|
+|webserver.metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
+|webserver.listen_addr|`UN_WEBSERVER_LISTEN_ADDR`| `0.0.0.0:5656` / ip:port to listen on. `0.0.0.0` is all IPs|
+|webserver.log_file|`UN_WEBSERVER_LOG_FILE`|No default. Optionally provide a file path to write HTTP logs|
+|webserver.log_files|`UN_WEBSERVER_LOG_FILES`|`10` / Log files to keep after rotating. `0` to disable|
+|webserver.log_file_mb|`UN_WEBSERVER_LOG_FILE_MB`|`10` / Max size of HTTP log files in megabytes|
+|webserver.ssl_cert_file|`UN_WEBSERVER_SSL_CERT_FILE`|No default. Path to SSL cert file to serve HTTPS|
+|webserver.ssl_key_file|`UN_WEBSERVER_SSL_KEY_FILE`|No default. Path to SSL key file to serve HTTPS|
+|webserver.urlbase|`UN_WEBSERVER_URLBASE`|`/` / Base URL path to serve HTTP content|
+|webserver.upstreams|`UN_WEBSERVER_UPSTREAMS`|No default. List of upstream proxy CIDRs or IPs to trust|
 
 ## Sonarr
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-sonarr.url|`UN_SONARR_0_URL`|No Default. Something like: `http://localhost:8989`|
-sonarr.api_key|`UN_SONARR_0_API_KEY`|No Default. Provide URL and API key if you use Sonarr|
-sonarr.paths|`UN_SONARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Sonarr. Used as fallback if the path Sonarr reports does not exist or is not accessible.|
-sonarr.protocols|`UN_SONARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
-sonarr.timeout|`UN_SONARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
-sonarr.delete_orig|`UN_SONARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
-sonarr.delete_delay|`UN_SONARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
-sonarr.syncthing|`UN_SONARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+|sonarr.url|`UN_SONARR_0_URL`|No Default. Something like: `http://localhost:8989`|
+|sonarr.api_key|`UN_SONARR_0_API_KEY`|No Default. Provide URL and API key if you use Sonarr|
+|sonarr.paths|`UN_SONARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Sonarr. Used as fallback if the path Sonarr reports does not exist or is not accessible.|
+|sonarr.protocols|`UN_SONARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
+|sonarr.timeout|`UN_SONARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
+|sonarr.delete_orig|`UN_SONARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
+|sonarr.delete_delay|`UN_SONARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
+|sonarr.syncthing|`UN_SONARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Radarr
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-radarr.url|`UN_RADARR_0_URL`|No Default. Something like: `http://localhost:7878`|
-radarr.api_key|`UN_RADARR_0_API_KEY`|No Default. Provide URL and API key if you use Radarr|
-radarr.paths|`UN_RADARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Radarr. Used as fallback if the path Radarr reports does not exist or is not accessible|
-radarr.protocols|`UN_RADARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
-radarr.timeout|`UN_RADARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
-radarr.delete_orig|`UN_RADARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
-radarr.delete_delay|`UN_RADARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
-radarr.syncthing|`UN_RADARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+|radarr.url|`UN_RADARR_0_URL`|No Default. Something like: `http://localhost:7878`|
+|radarr.api_key|`UN_RADARR_0_API_KEY`|No Default. Provide URL and API key if you use Radarr|
+|radarr.paths|`UN_RADARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Radarr. Used as fallback if the path Radarr reports does not exist or is not accessible|
+|radarr.protocols|`UN_RADARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
+|radarr.timeout|`UN_RADARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
+|radarr.delete_orig|`UN_RADARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
+|radarr.delete_delay|`UN_RADARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
+|radarr.syncthing|`UN_RADARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Lidarr
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-lidarr.url|`UN_LIDARR_0_URL`|No Default. Something like: `http://localhost:8686`|
-lidarr.api_key|`UN_LIDARR_0_API_KEY`|No Default. Provide URL and API key if you use Lidarr|
-lidarr.paths|`UN_LIDARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Lidarr. Used as fallback if the path Lidarr reports does not exist or is not accessible|
-lidarr.protocols|`UN_LIDARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
-lidarr.timeout|`UN_LIDARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
-lidarr.delete_orig|`UN_LIDARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
-lidarr.delete_delay|`UN_LIDARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
-lidarr.syncthing|`UN_LIDARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+|lidarr.url|`UN_LIDARR_0_URL`|No Default. Something like: `http://localhost:8686`|
+|lidarr.api_key|`UN_LIDARR_0_API_KEY`|No Default. Provide URL and API key if you use Lidarr|
+|lidarr.paths|`UN_LIDARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Lidarr. Used as fallback if the path Lidarr reports does not exist or is not accessible|
+|lidarr.protocols|`UN_LIDARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
+|lidarr.timeout|`UN_LIDARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
+|lidarr.delete_orig|`UN_LIDARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
+|lidarr.delete_delay|`UN_LIDARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
+|lidarr.syncthing|`UN_LIDARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Readarr
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-readarr.url|`UN_READARR_0_URL`|No Default. Something like: `http://localhost:8787`|
-readarr.api_key|`UN_READARR_0_API_KEY`|No Default. Provide URL and API key if you use Readarr|
-readarr.paths|`UN_READARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Readarr. Used as fallback if the path Readarr reports does not exist or is not accessible|
-readarr.protocols|`UN_READARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
-readarr.timeout|`UN_READARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
-readarr.delete_orig|`UN_READARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
-readarr.delete_delay|`UN_READARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
-readarr.syncthing|`UN_READARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+|readarr.url|`UN_READARR_0_URL`|No Default. Something like: `http://localhost:8787`|
+|readarr.api_key|`UN_READARR_0_API_KEY`|No Default. Provide URL and API key if you use Readarr|
+|readarr.paths|`UN_READARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Readarr. Used as fallback if the path Readarr reports does not exist or is not accessible|
+|readarr.protocols|`UN_READARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
+|readarr.timeout|`UN_READARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
+|readarr.delete_orig|`UN_READARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
+|readarr.delete_delay|`UN_READARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
+|readarr.syncthing|`UN_READARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Folder
 
@@ -123,15 +140,15 @@ monitor your download client's "move to" path if you're not using it with an Sta
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-folder.path|`UN_FOLDER_0_PATH`|No Default; folder to watch for archives. **Not for Starr apps**|
-folder.extract_path|`UN_FOLDER_0_EXTRACT_PATH`|Where to extract to. Default is the same as `path`|
-folder.delete_after|`UN_FOLDER_0_DELETE_AFTER`|`10m` Delete extracted files and/or archives after this duration; `0` disables|
-folder.disable_log|`UN_FOLDER_0_DISABLE_LOG`|`false` Turns off creation of extraction logs files for this folder|
-folder.delete_original|`UN_FOLDER_0_DELETE_ORIGINAL`|`false` Delete archives after successful extraction|
-folder.delete_files|`UN_FOLDER_0_DELETE_FILES`|`false` Delete extracted files after successful extraction|
-folder.move_back|`UN_FOLDER_0_MOVE_BACK`|`false` Move extracted items back into original folder|
-folder.extract_isos|`UN_FOLDER_0_EXTRACT_ISOS`|`false` Setting this to true enables .iso file extraction|
-folder.disable_recursion|`UN_FOLDER_0_DISABLE_RECURSION`|`false` Setting this to true disables extracting archives inside archives|
+|folder.path|`UN_FOLDER_0_PATH`|No Default; folder to watch for archives. **Not for Starr apps**|
+|folder.extract_path|`UN_FOLDER_0_EXTRACT_PATH`|Where to extract to. Default is the same as `path`|
+|folder.delete_after|`UN_FOLDER_0_DELETE_AFTER`|`10m` Delete extracted files and/or archives after this duration; `0` disables|
+|folder.disable_log|`UN_FOLDER_0_DISABLE_LOG`|`false` Turns off creation of extraction logs files for this folder|
+|folder.delete_original|`UN_FOLDER_0_DELETE_ORIGINAL`|`false` Delete archives after successful extraction|
+|folder.delete_files|`UN_FOLDER_0_DELETE_FILES`|`false` Delete extracted files after successful extraction|
+|folder.move_back|`UN_FOLDER_0_MOVE_BACK`|`false` Move extracted items back into original folder|
+|folder.extract_isos|`UN_FOLDER_0_EXTRACT_ISOS`|`false` Setting this to true enables .iso file extraction|
+|folder.disable_recursion|`UN_FOLDER_0_DISABLE_RECURSION`|`false` Setting this to true disables extracting archives inside archives|
 
 ## Command Hooks
 
@@ -142,13 +159,13 @@ on Windows.
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-cmdhook.command|`UN_CMDHOOK_0_COMMAND`|No Default; command to run|
-cmdhook.name|`UN_CMDHOOK_0_NAME`|Defaults to first word in command; provide an optional name for logs|
-cmdhook.timeout|`UN_CMDHOOK_0_TIMEOUT`|Defaults to global timeout, usually `10s`|
-cmdhook.silent|`UN_CMDHOOK_0_SILENT`|`false` / Hide command output from logs|
-cmdhook.shell|`UN_CMDHOOK_0_SHELL`|`false` / Run command inside a shell|
-cmdhook.exclude|`UN_CMDHOOK_0_EXCLUDE`|`[]` / List of apps to exclude: radarr, sonarr, folders, etc|
-cmdhook.events|`UN_CMDHOOK_0_EVENTS`|`[0]` / List of event IDs to send (shown under Webhooks)|
+|cmdhook.command|`UN_CMDHOOK_0_COMMAND`|No Default; command to run|
+|cmdhook.name|`UN_CMDHOOK_0_NAME`|Defaults to first word in command; provide an optional name for logs|
+|cmdhook.timeout|`UN_CMDHOOK_0_TIMEOUT`|Defaults to global timeout, usually `10s`|
+|cmdhook.silent|`UN_CMDHOOK_0_SILENT`|`false` / Hide command output from logs|
+|cmdhook.shell|`UN_CMDHOOK_0_SHELL`|`false` / Run command inside a shell|
+|cmdhook.exclude|`UN_CMDHOOK_0_EXCLUDE`|`[]` / List of apps to exclude: radarr, sonarr, folders, etc|
+|cmdhook.events|`UN_CMDHOOK_0_EVENTS`|`[0]` / List of event IDs to send (shown under Webhooks)|
 
 All extraction data is input to the command using environment variables, see example below.
 Extracted files variables names begin with `UN_DATA_FILES_`.
@@ -194,18 +211,18 @@ Works great with [notifiarr.com](https://notifiarr.com). You can use
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
-webhook.url|`UN_WEBHOOK_0_URL`|No Default; URL to send POST webhook to|
-webhook.name|`UN_WEBHOOK_0_NAME`|Defaults to URL; provide an optional name to hide the URL in logs|
-webhook.nickname|`UN_WEBHOOK_0_NICKNAME`|`Unpackerr` / Passed into templates for telegram, discord and slack hooks|
-webhook.channel|`UN_WEBHOOK_0_CHANNEL`|`""` / Passed into templates for slack.com webhooks|
-webhook.timeout|`UN_WEBHOOK_0_TIMEOUT`|Defaults to global timeout, usually `10s`|
-webhook.silent|`UN_WEBHOOK_0_SILENT`|`false` / Hide successful POSTs from logs|
-webhook.ignore_ssl|`UN_WEBHOOK_0_IGNORE_SSL`|`false` / Ignore invalid SSL certificates|
-webhook.exclude|`UN_WEBHOOK_0_EXCLUDE`|`[]` / List of apps to exclude: radarr, sonarr, folders, etc|
-webhook.events|`UN_WEBHOOK_0_EVENTS`|`[0]` / List of event IDs to send (shown below)|
-webhook.template_path|`UN_WEBHOOK_0_TEMPLATE_PATH`|`""` / Instead of an internal template, provide your own|
-webhook.template|`UN_WEBHOOK_0_TEMPLATE`|`""` / Instead of auto template selection, force one; options below|
-webhook.content_type|`UN_WEBHOOK_0_CONTENT_TYPE`|`application/json` / Content-Type header sent to webhook|
+|webhook.url|`UN_WEBHOOK_0_URL`|No Default; URL to send POST webhook to|
+|webhook.name|`UN_WEBHOOK_0_NAME`|Defaults to URL; provide an optional name to hide the URL in logs|
+|webhook.nickname|`UN_WEBHOOK_0_NICKNAME`|`Unpackerr` / Passed into templates for telegram, discord and slack hooks|
+|webhook.channel|`UN_WEBHOOK_0_CHANNEL`|`""` / Passed into templates for slack.com webhooks|
+|webhook.timeout|`UN_WEBHOOK_0_TIMEOUT`|Defaults to global timeout, usually `10s`|
+|webhook.silent|`UN_WEBHOOK_0_SILENT`|`false` / Hide successful POSTs from logs|
+|webhook.ignore_ssl|`UN_WEBHOOK_0_IGNORE_SSL`|`false` / Ignore invalid SSL certificates|
+|webhook.exclude|`UN_WEBHOOK_0_EXCLUDE`|`[]` / List of apps to exclude: radarr, sonarr, folders, etc|
+|webhook.events|`UN_WEBHOOK_0_EVENTS`|`[0]` / List of event IDs to send (shown below)|
+|webhook.template_path|`UN_WEBHOOK_0_TEMPLATE_PATH`|`""` / Instead of an internal template, provide your own|
+|webhook.template|`UN_WEBHOOK_0_TEMPLATE`|`""` / Instead of auto template selection, force one; options below|
+|webhook.content_type|`UN_WEBHOOK_0_CONTENT_TYPE`|`application/json` / Content-Type header sent to webhook|
 
 ### Webhook Notes
 
