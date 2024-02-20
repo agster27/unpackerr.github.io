@@ -35,10 +35,10 @@ Unpackerr uses a lot CPU, and tends not to work well when running on smaller sys
 Running Unpackerr on a system with a large CPU is ideal to avoid system performance degradation.
 :::
 
-- [Docker](/docs/install/docker): [Compose](/docs/install/compose), [unRAID](/docs/install/unraid)
+- [Docker](/docs/install/docker): [Compose](/docs/install/compose), [unRAID](/docs/install/unraid),
+    [TrueNAS Scale](/docs/install/truenas-scale)
 - [FreeBSD](/docs/install/freebsd)
 - [Linux: with root](/docs/install/linux), [without root (seedbox)](/docs/install/seedbox)
-- [TrueNAS Scale](/docs/install/truenas-scale)
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
 
@@ -49,9 +49,6 @@ Running Unpackerr on a system with a large CPU is ideal to avoid system performa
 These guides are provided by community members.
 
 - Synology: https://drfrankenstein.co.uk/2022/07/02/unpackerr-in-docker-on-a-synology-nas/
-- Synology: https://neellik.com/how-to-install-unpackerr-on-your-synology-nas-with-docker/
-- TrueNAS: https://github.com/imjustleaving/trueNAS/wiki/A-Guide-to-go-from-a-bare-metal-TrueNAS-Scale-install-to-a-Fully-Automated-Media-Server
-- TrueCharts: https://staging.artifacthub.io/packages/helm/truecharts/unpackerr/4.0.30
 - HomeAssistant: https://github.com/alexbelgium/hassio-addons/tree/master/unpackerr
 
 ([open a pull request to add your guide](https://github.com/Unpackerr/unpackerr.github.io/blob/main/docs/install/choosemethod.md))
