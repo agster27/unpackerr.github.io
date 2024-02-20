@@ -4,7 +4,7 @@ module.exports = {
     {
       "Installation": [
         'install/choosemethod',
-        {"Docker": [ 'install/docker', 'install/compose', 'install/unraid']},
+        {"Docker": [ 'install/docker', 'install/compose', 'install/unraid', 'install/truenas-scale']},
         'install/freebsd',
         'install/macos',
         'install/windows',

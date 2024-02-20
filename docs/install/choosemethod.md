@@ -38,6 +38,7 @@ Running Unpackerr on a system with a large CPU is ideal to avoid system performa
 - [Docker](/docs/install/docker): [Compose](/docs/install/compose), [unRAID](/docs/install/unraid)
 - [FreeBSD](/docs/install/freebsd)
 - [Linux: with root](/docs/install/linux), [without root (seedbox)](/docs/install/seedbox)
+- [TrueNAS Scale](/docs/install/truenas-scale)
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
 
