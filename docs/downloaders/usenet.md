@@ -13,15 +13,11 @@ Find information about Usenet download clients on this page. It's a bit sparse, 
 
 ## SABnzbd
 
-In the categories tab, there's a processing option.
-This is what causes sab to unpack the files instead of unpackerr.
-Select an option that is not `default` nor `+unpack`.
-
-[See more on this topic](https://github.com/Unpackerr/unpackerr/issues/285).
+Generally Unpackerr is not required for Sabnzbd. Sabnzbd simply needs the [Job Actions](https://sabnzbd.org/wiki/extra/job-options) in [Categories](https://sabnzbd.org/wiki/configuration/4.2/categories) set to `+Unpack` or `+Delete`
 
 ## NZBGet
 
-This is depressing, but...
+This is depressing, but...NZBGet is no longer developed.
 
 ## Easynews
 
