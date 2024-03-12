@@ -11,7 +11,8 @@ description: Tips and Tricks for troubleshooting Unpackerr installations.
   Read and Write permissions to the path trying to be extracted.
 - Most Docker (and Unraid) issues can be resolved by ensuring your paths align between containers
   - See [TRaSH's Guides](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/) and the
-    [Servarr Team's Docker Guide](https://wiki.servarr.com/docker-guide) for details on Docker/Unraid path practices
+    [Servarr Team's Docker Guide](https://wiki.servarr.com/docker-guide) for details on Docker/Unraid path practices.
+- Paths below are formatted `/host:/container`
 - Common **Bad Path Examples that will not work**:
   - _Example 1._
     - Sonarr: `/mnt/user/data:/data`
