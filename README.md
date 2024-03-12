@@ -60,6 +60,8 @@ gem install --no-document mdl
 mdl docs
 ```
 
+Seriously, run mdl before commititng.
+
 ## Codespell
 
 ```shell
