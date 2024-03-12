@@ -13,7 +13,10 @@ Find information about Usenet download clients on this page. It's a bit sparse, 
 
 ## SABnzbd
 
-Generally Unpackerr is not required for Sabnzbd. Sabnzbd simply needs the [Job Actions](https://sabnzbd.org/wiki/extra/job-options) in [Categories](https://sabnzbd.org/wiki/configuration/4.2/categories) set to `+Unpack` or `+Delete`
+Generally Unpackerr is not required for Sabnzbd. 
+
+- Navigate to [Job Actions](https://sabnzbd.org/wiki/extra/job-options) in [Categories](https://sabnzbd.org/wiki/configuration/4.2/categories)
+- Set the value to `+Unpack` or `+Delete`
 
 ## NZBGet
 
