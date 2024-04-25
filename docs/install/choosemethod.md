@@ -50,5 +50,6 @@ These guides are provided by community members.
 
 - Synology: https://drfrankenstein.co.uk/2022/07/02/unpackerr-in-docker-on-a-synology-nas/
 - HomeAssistant: https://github.com/alexbelgium/hassio-addons/tree/master/unpackerr
+- HostingByDesign (HBD) B's Hosted Scripts: https://github.com/brettpetch/hosted-scripts
 
 ([open a pull request to add your guide](https://github.com/Unpackerr/unpackerr.github.io/blob/main/docs/install/choosemethod.md))
