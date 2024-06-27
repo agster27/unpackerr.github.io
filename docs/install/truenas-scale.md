@@ -52,6 +52,19 @@ On the install screen, we are most concerned with the following two entries in t
 All other settings should be reviewed and modify to your specific use case.
 The defaults tend to work fine if you have the rest of the starr apps installed on TrueNAS Scale as well.
 
+## Advanced
+
+The default container mount path for the `App downloads Storage` mentioned above is `/downloads`.
+While this works for a majority of users, it does not work for everyone. Check your download client's
+download location(s), and be sure to add the exact same mount to Unpackerr. This ensures unpackerr
+can locate your downloaded files.
+
+- In the Unpackerr application (in your TrueNAS Scale UI), scroll down to `Additional App Storage` and click `Add`.
+- Once added, match the information from the download application into the Unpackerr application.
+- The screenshot below shows an example mounting `/mnt` in the container directly to the download path.
+
+![App Additional Storage example](/img/screenshots/truenas-scale/app-storage.png)
+
 ## Verify
 
 Once installed, TrueNAS Scale should boot the container immediately.
