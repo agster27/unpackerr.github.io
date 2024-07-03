@@ -40,7 +40,7 @@ api_key = "32morecharacters"
 
 - Same example using env variables.
 
-```
+```shell
 UN_RADARR_0_URL=http://radarr
 UN_RADARR_0_API_KEY=32characters
 UN_RADARR_1_URL=http://radarr4k
@@ -68,12 +68,32 @@ UN_RADARR_1_API_KEY=32morecharacters
 |passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
 |folders.interval|`UN_FOLDERS_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
 
-:::info Passwords
+## Secrets and Passwords
+
 If a wrong password is provided, the entire archive must
 be read before we know it's a bad password.
 Providing many passwords here can drastically slow down
 extractions and cause extra disk IO. You may also specify
-a password file by providing a "password" in this format: `filepath:/path/to/passwords.txt`
+a password file by providing a "password" in this format: `filepath:/path/to/passwords.txt`.
+The file must contain 1 password per line.
+
+:::info Other Secrets
+You may store any string parameter (except time intervals) into a separate file
+by setting the value to `filepath:/path/to/file.txt`. In other words, if you want
+your Radarr API key to be read from a separate file, instead of storing it directly
+in the config file or environment variables you can do this:
+```toml
+[[radarr]]
+  url = "https://some.url/radarr"
+  api_key = "filepath:/etc/secrets/radarr.txt"
+```
+
+or:
+```shell
+UN_RADARR_0_API_KEY=filepath:/etc/secrets/radarr.txt
+```
+
+Then store the API key (and only the API key) in `/etc/secrets/radarr.txt`.
 :::
 
 ## Webserver
@@ -160,7 +180,6 @@ It provides no UI. This may change in the future. The web server was added in v0
 |whisparr.delete_orig|`UN_WHISPARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
 |whisparr.delete_delay|`UN_WHISPARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
 |whisparr.syncthing|`UN_WHISPARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
-
 
 ## Folder
 

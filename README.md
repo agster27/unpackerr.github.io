@@ -60,9 +60,9 @@ gem install --no-document mdl
 mdl docs
 ```
 
-Seriously, run mdl before commititng.
+Seriously, run mdl before committing.
 
-## Codespell
+## Codespell Linter
 
 ```shell
 brew install codespell
