@@ -12,8 +12,16 @@ You should use the data here along with the data in the
 [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
 to paint the full picture of how to configure Unpackerr.
 
+## Config Generator
+
+[Notifiarr](https://notifiarr.com) hosts a configuration file maker.
+Simply fill in a web form, and click a button to get a working config file.
+
+- **Access the generator here: https://notifiarr.com/unpackerr.php**
+
 ## Config File Notes
 
+- Setting a log file is strongly recommend. This makes it much easier to troubleshoot problems.
 - To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
 - When using a config file you must uncomment at minimum the `[[header]]` (`[[radarr]]`), `url` and `api_key`.
 - Uncomment means remove the hash `#` at the beginning of the line.
@@ -30,6 +38,14 @@ url = "http://radarr4k"
 api_key = "32morecharacters"
 ```
 
+- Same example using env variables.
+
+```
+UN_RADARR_0_URL=http://radarr
+UN_RADARR_0_API_KEY=32characters
+UN_RADARR_1_URL=http://radarr4k
+UN_RADARR_1_API_KEY=32morecharacters
+```
 ## Global Settings
 
 |Config Name|Variable Name|Default / Note|
@@ -50,9 +66,7 @@ api_key = "32morecharacters"
 |file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 |dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
 |passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
-|folder.interval|`UN_FOLDER_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
-
-Setting a log file is strongly recommend. This makes is much easier to troubleshoot problems.
+|folders.interval|`UN_FOLDERS_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
 
 :::info Passwords
 If a wrong password is provided, the entire archive must
@@ -133,6 +147,20 @@ It provides no UI. This may change in the future. The web server was added in v0
 |readarr.delete_orig|`UN_READARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
 |readarr.delete_delay|`UN_READARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
 |readarr.syncthing|`UN_READARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+
+## Whisparr
+
+|Config Name|Variable Name|Default / Note|
+|---|---|---|
+|whisparr.url|`UN_WHISPARR_0_URL`|No Default. Something like: `http://localhost:8787`|
+|whisparr.api_key|`UN_WHISPARR_0_API_KEY`|No Default. Provide URL and API key if you use Readarr|
+|whisparr.paths|`UN_WHISPARR_0_PATHS_0`|`/downloads` List of paths where content is downloaded for Readarr. Used as fallback if the path Readarr reports does not exist or is not accessible|
+|whisparr.protocols|`UN_WHISPARR_0_PROTOCOLS`|`torrent` Protocols to process. Alt: `torrent,usenet`|
+|whisparr.timeout|`UN_WHISPARR_0_TIMEOUT`|`10s` / How long to wait for the app to respond|
+|whisparr.delete_orig|`UN_WHISPARR_0_DELETE_ORIG`|`false` / Delete archives after import? Recommend not setting this to true|
+|whisparr.delete_delay|`UN_WHISPARR_0_DELETE_DELAY`|`5m` / Extracts are deleted this long after import, `-1s` to disable|
+|whisparr.syncthing|`UN_WHISPARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
+
 
 ## Folder
 
