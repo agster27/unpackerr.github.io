@@ -88,7 +88,7 @@ in the config file or environment variables you can do this:
   api_key = "filepath:/etc/secrets/radarr.txt"
 ```
 
-or:
+Or if using environment variables:
 ```shell
 UN_RADARR_0_API_KEY=filepath:/etc/secrets/radarr.txt
 ```
