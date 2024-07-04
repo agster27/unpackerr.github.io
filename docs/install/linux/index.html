@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.4.0">
 <title data-rh="true">Repository | Unpackerr Extracter</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://unpackerr.zip/docs/install/linux"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Repository | Unpackerr Extracter"><meta data-rh="true" name="description" content="Install Unpackerr on a Linux server."><meta data-rh="true" property="og:description" content="Install Unpackerr on a Linux server."><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://unpackerr.zip/docs/install/linux"><link data-rh="true" rel="alternate" href="https://unpackerr.zip/docs/install/linux" hreflang="en"><link data-rh="true" rel="alternate" href="https://unpackerr.zip/docs/install/linux" hreflang="x-default"><link rel="stylesheet" href="/assets/css/styles.60cbeea9.css">
-<script src="/assets/js/runtime~main.e73d6c34.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.5d8cb13e.js" defer="defer"></script>
 <script src="/assets/js/main.2aa53793.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -17,9 +17,10 @@ Using a repository allows easier upgrades and access to additional software.
 Use the command (script) below to automatically install the GoLift repo and
 unpackerr in one command.</p>
 <div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">curl -s https://golift.io/repo.sh | sudo bash -s - unpackerr</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<p>After install, edit the config file and start the service:</p>
+<p>After install, edit the config file, or
+<a href="https://notifiarr.com/unpackerr.php" target="_blank" rel="noopener noreferrer">generate one</a> and start the service:</p>
 <div class="language-shell codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-shell codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo nano /etc/unpackerr/unpackerr.conf</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">sudo systemctl restart unpackerr</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
-<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Archive Access</div><div class="admonitionContent_BuS1"><p>Requires access to your download location.
+<div class="theme-admonition theme-admonition-caution admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>Archive Access</div><div class="admonitionContent_BuS1"><p>Unpackerr requires write access to your download location.
 Make sure you set the <code>path</code> variables correctly in the configuration.
 Even if they&#x27;re set incorrectly Unpackerr makes a best effort attempt
 to locate your downloads. If it can&#x27;t find your downloads, then the
@@ -29,16 +30,34 @@ to locate your downloads. If it can&#x27;t find your downloads, then the
 user or group read and write access to your archives. That may mean adding the <code>unpackerr</code>
 user, for example, to the <code>debian-transmission</code> group.
 You would do that with a command such as <code>sudo usermod -aG debian-transmission unpackerr</code></p>
+<p>It&#x27;s only suggested you do run <code>usermod</code> if you know what it does and how to set a umask.
+You probably instead want to change the uid and/or gid as shown next.</p>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="change-the-uidgid">Change the uid/gid<a class="hash-link" aria-label="Direct link to Change the uid/gid" title="Direct link to Change the uid/gid" href="/docs/install/linux#change-the-uidgid">​</a></h3>
 <p>If you wish to change the user and/or group that unpackerr runs as you need to do exactly this, <strong>and only this</strong>:</p>
 <ol>
-<li>Make this folder: <code>sudo mkdir -p /etc/systemd/system/unpackerr.service.d/</code></li>
-<li>Make this file: <code>sudo touch /etc/systemd/system/unpackerr.service.d/override.conf</code></li>
+<li>Make this folder:<!-- -->
+<ul>
+<li><code>sudo mkdir -p /etc/systemd/system/unpackerr.service.d/</code></li>
+</ul>
+</li>
+<li>Make this file:<!-- -->
+<ul>
+<li><code>sudo touch /etc/systemd/system/unpackerr.service.d/override.conf</code></li>
+</ul>
+</li>
 <li>Add the following content to the file. Replace <code>newuser</code> and <code>newgroup</code> with your new values.<!-- -->
 <div class="language-systemd codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-systemd codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">[Service]</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">User=newuser</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">Group=newgroup</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
 </li>
-<li>Run <code>sudo systemctl daemon-reload</code> to re-read this new config file.</li>
-<li>Run <code>sudo systemctl restart unpackerr</code> to start unpackerr with the new ID(s).</li>
+<li>Run this to read the new systemd service override file:<!-- -->
+<ul>
+<li><code>sudo systemctl daemon-reload</code></li>
+</ul>
+</li>
+<li>Run this to start unpackerr with the new user and group:<!-- -->
+<ul>
+<li><code>sudo systemctl restart unpackerr</code></li>
+</ul>
+</li>
 </ol>
 <hr>
 <p>Linux repository hosting provided by
