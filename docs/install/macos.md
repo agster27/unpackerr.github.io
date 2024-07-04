@@ -8,30 +8,9 @@ description: Install Unpackerr on a macOS system.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 
-## Brew
-
-1. Use homebrew.
-1. Edit config file at `/usr/local/etc/unpackerr/unpackerr.conf`
-1. Start it.
-1. Like this:
-
-```shell
-brew install golift/mugs/unpackerr
-vi /usr/local/etc/unpackerr/unpackerr.conf
-brew services start unpackerr
-```
-
-The `brew services start` command will signal brew to start Unpackerr every time you login.
-
 <ArchiveAccess />
 
-## App
-
-You can also use a GUI app on a Mac instead of CLI via Homebrew:
-
-:::info brew vs app
-The `.app` and the Homebrew version are the same application, but one runs in GUI mode and one does not.
-:::
+## Universal Binary App
 
 1. Download a `.dmg` file from
    [the Releases page](https://github.com/Unpackerr/unpackerr/releases) and double-click it.

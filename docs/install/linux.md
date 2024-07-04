@@ -26,7 +26,8 @@ unpackerr in one command.
 curl -s https://golift.io/repo.sh | sudo bash -s - unpackerr
 ```
 
-After install, edit the config file and start the service:
+After install, edit the config file, or
+[generate one](https://notifiarr.com/unpackerr.php) and start the service:
 
 ```shell
 sudo nano /etc/unpackerr/unpackerr.conf
@@ -42,20 +43,27 @@ user or group read and write access to your archives. That may mean adding the `
 user, for example, to the `debian-transmission` group.
 You would do that with a command such as `sudo usermod -aG debian-transmission unpackerr`
 
+It's only suggested you do run `usermod` if you know what it does and how to set a umask.
+You probably instead want to change the uid and/or gid as shown next.
+
 ### Change the uid/gid
 
 If you wish to change the user and/or group that unpackerr runs as you need to do exactly this, **and only this**:
 
-1. Make this folder: `sudo mkdir -p /etc/systemd/system/unpackerr.service.d/`
-1. Make this file: `sudo touch /etc/systemd/system/unpackerr.service.d/override.conf`
+1. Make this folder:
+   - `sudo mkdir -p /etc/systemd/system/unpackerr.service.d/`
+1. Make this file:
+   - `sudo touch /etc/systemd/system/unpackerr.service.d/override.conf`
 1. Add the following content to the file. Replace `newuser` and `newgroup` with your new values.
    ```systemd
    [Service]
    User=newuser
    Group=newgroup
    ```
-1. Run `sudo systemctl daemon-reload` to re-read this new config file.
-1. Run `sudo systemctl restart unpackerr` to start unpackerr with the new ID(s).
+1. Run this to read the new systemd service override file:
+   - `sudo systemctl daemon-reload`
+1. Run this to start unpackerr with the new user and group:
+   - `sudo systemctl restart unpackerr`
 
 ---
 

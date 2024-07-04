@@ -15,7 +15,7 @@ A default Windows install runs from `C:\`; if you installed Windows in another l
 :::
 
 - Browse to `C:\ProgramData` and create a folder named `unpackerr` and then inside that create a `logs` directory.
-  - Enable hidden files and folders if you dont see `C:\ProgramData`.
+  - Enable hidden files and folders if you don't see `C:\ProgramData`.
   - End result: `C:\ProgramData\unpackerr` and `C:\ProgramData\unpackerr\logs`
 - Extract a `.exe.zip` file from [the Releases page](https://github.com/Unpackerr/unpackerr/releases)
   into  `C:\ProgramData\unpackerr\`.
@@ -23,7 +23,8 @@ A default Windows install runs from `C:\`; if you installed Windows in another l
 - Click the systray icon and select `Config` -> `Edit`.
 - Uncomment `log_file` (remove the `#`) and set it as shown here:
   - `log_file = 'C:\ProgramData\unpackerr\logs\unpackerr.log'`
-- Edit the rest of the config to suit your system and save the file.
+- Edit the rest of the config to suit your system,
+  or [generate one](https://notifiarr.com/unpackerr.php) and save the file.
 - Click the systray icon again and select `Quit`. Then open the app again.
 - View the logs by clicking the systray icon and `Logs` -> `View`.
 - Make a shortcut to the application in your Startup menu to run it when you login.

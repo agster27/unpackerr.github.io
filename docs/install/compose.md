@@ -77,6 +77,7 @@ Replace `/downloads/unpackerr.log` with `/data/unpackerr.log` if you mounted `/d
 Or whatever download path you mounted; just put it there for ease of finding it.
 
 # More Notes
+
 :::warning Security Opts
 Do not include this in your compose. It will make Unpackerr not work properly. If you know how
 to adjust caps, go for it, but please don't ask for help without removing this first:
