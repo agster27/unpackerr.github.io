@@ -23,19 +23,20 @@ docker logs <container id from docker run>
 ```
 
 :::warning Data Mount
-The `/data` or `/downloads` mount you use for starr apps should be set the same for unpackerr.
+The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
 Using the same mount path keeps consistency and makes troubleshooting Unpackerr easier.
+Most importantly, it allows Unpackerr to find your files.
 
-This means that if you mount `/mnt/HostDownloads:/downloads` on your starr apps you should
-also mount `/mnt/HostDownloads:/downloads` on your unpackerr container. If you mount
-`/mnt/user/data:/data` on your starr apps, mount the same path on Unpackerr.
+This means that if you mount `/mnt/storage/downloads:/downloads` on your Starr apps you should
+also mount `/mnt/storage/downloads:/downloads` on your Unpackerr container. If you mount
+`/mnt/user/data:/data` on your Starr apps, mount the same path on Unpackerr.
 **Make sure Unpackerr can find the downloads in the same place that Sonarr and Radarr find them.**
 :::
 
 ## Docker Example with config file
 
 - Copy the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
-  from the repo.
+  from the repo, or [generate one](https://notifiarr.com/unpackerr.php).
 - Then grab the image from docker hub and run it using an overlay for the config file's directory.
 - The config file must be at `/config/unpackerr.conf`.
 - Recommend bind-mounting `/config` as an app-data directory. Example Follows.
@@ -48,9 +49,9 @@ docker logs <container id from docker run>
 
 ## More Dockers
 
- If you want a container that has a bit more to it, you can try a third party option.
- The container provided by golift is from scratch so it has nothing more than a binary
- and a config file (with our defaults).
+If you want a container that has a bit more to it, you can try a third party option.
+The container provided by golift is built `FROM scratch` so it has nothing more in the
+container than a binary and a config file (with our defaults).
 
 - **[@hotio](https://github.com/hotio) maintains a
     [Custom Docker Container](https://hub.docker.com/r/hotio/unpackerr)
@@ -69,8 +70,9 @@ docker run --user 1000:100 -d -v /mnt/data:/data -v /mnt/config:/config golift/u
 ### Hotio
 
 The primary difference between the golift and hotio containers is how you set the uid and gid.
-Hotdio does not user the `--user` parameter and instead sets the UID and GID with environment variables.
-Pass the `PUID` and `PGID` env variables when using hotio's container. Example:
+Hotio does not user the `--user` parameter and instead sets the UID and GID with environment
+variables. *Passing the `--user` parameter to the hotio container will render it inoperable.*
+Pass the `PUID` and `PGID` environment variables when using hotio's container. Example:
 
 ```bash
 # This commands runs hotio/unpackerr with UID 1000 and GID 100.

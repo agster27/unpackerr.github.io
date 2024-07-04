@@ -34,7 +34,7 @@ You will need the following items before getting started:
 The goal is make the config file available @ `/config/unpackerr.conf` inside the container.
 Using this container path will allow Unpackerr to find your configuration automatically.
 You may also need to correct ownership of the file on the host so unpackerr can read it.
-Use `chown` to do that. Something like: `chown apps:apps /mnt/default/unpackerr/unpackerr.conf`
+Use `chown` to do that; something like: `chown apps:apps /mnt/default/unpackerr/unpackerr.conf`
 :::
 
 ## Installing the App

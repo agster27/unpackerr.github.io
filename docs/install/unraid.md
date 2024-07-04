@@ -23,8 +23,8 @@ the `1` to a `2` and so on. This works for all starr apps, folders, webhooks and
 hooks. There is no limit to how many you may configure.
 :::
 
-It's also recommend that you set a log file. It's easy to put it your downloads location,
-example follows.
+It's also recommend that you set a log file.
+It's recommended to put it in your downloads location, and an example follows.
 
 ![](/img/screenshots/unraid/bindvolume.png "bind volume")
 
@@ -44,6 +44,9 @@ not what you want. **Do this:**
 ![](/img/screenshots/unraid/starrmounts.png "starr mounts")
 
 If the highlighted portions above are not identical to the one below, then things are bound to work poorly.
+In other words, if Unpackerr has `/downloads <-> /mnt/user/downloads` and Sonarr has
+`/data <-> /mnt/user/downloads`, Unpackerr will not be able to find your files. In this hypothetical, you
+must edit the Unpackerr `/downloads` mount, and change the _Container Path_ to `/data` so it matches Sonarr.
 
 ![](/img/screenshots/unraid/unpackerrmount.png "unapackerr mount")
 :::
