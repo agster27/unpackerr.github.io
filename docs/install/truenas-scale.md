@@ -30,6 +30,13 @@ You will need the following items before getting started:
 - We recommend putting the config file in place before installing the application.
    Use the documentation from above and save your custom config file to the location you chose above.
 
+:::caution Configuration Notes
+The goal is make the config file available @ `/config/unpackerr.conf`. 
+Using this path will allow Unpackerr to find your configuration automatically.
+You may also need to correct ownership on the file so unpackerr can read it. 
+Use `chown` to do that. Something like: `chown apps:apps /mnt/default/unpackerr/unpackerr.conf`
+:::
+
 ## Installing the App
 
 1. After TrueCharts is added as a catalog, go to the Apps section.
@@ -37,13 +44,6 @@ You will need the following items before getting started:
 1. Then search for Unpackerr, it should show in the list.
 1. Click Install. <br/>
    ![TrueNAS Scale Discover Apps page](/img/screenshots/truenas-scale/discover.png)
-
-:::caution Configuration Notes
-The goal is make the config file available @ `/config/unpackerr.conf`. 
-Using this path will allow Unpackerr to find your configuration automatically.
-You may also need to correct ownership on the file so unpackerr can read it. 
-Use `chown` to do that. Something like: `chown apps:apps /mnt/default/unpackerr/unpackerr.conf`
-:::
 
 ## Configuration
 
