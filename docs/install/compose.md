@@ -22,9 +22,12 @@ docker-compose up -d
 
 Here's an example minimal compose file. This works well, and all the defaults should work for you too.
 The [`user:` parameter](https://docs.docker.com/compose/compose-file/05-services/#user) controls
-the uid and gid that the app runs as. The default is root if you don't include it.
+the uid and gid that the app runs as. The default is root if you don't include it, but you should definitely
+include it, and set it correctly for your environment.
+Read the [Permissions section on the Docker page](docker#permissions) for more details.
 
-Find your time zone [`TZ` identifier here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Find your time zone [`TZ` identifier here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones),
+and set `TZ` too so logs have the correct time stamp for you.
 
 ```yaml
 services:
