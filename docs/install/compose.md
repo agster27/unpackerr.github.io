@@ -19,7 +19,10 @@ docker-compose up -d
 ```
 
 Here's an example minimal compose file. This works, and all the defaults should work for you too.
-Set `PUID`, `PGID` and `TZ` in your compose `.env` for this example to work correctly.
+The [`user:` parameter](https://docs.docker.com/compose/compose-file/05-services/#user) controls
+the uid and gid that the app runs as. The default is root if you don't include it.
+
+Find your [TZ identifier here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ```yaml
 services:
@@ -29,9 +32,9 @@ services:
     volumes:
       - /mnt/storage/downloads:/downloads
     restart: always
-    user: ${PUID}:${PGID}
+    user: 1001:100
     environment:
-      - TZ=${TZ}
+      - TZ=America/New_York
       - UN_LOG_FILE=/downloads/unpackerr.log
       - UN_SONARR_0_URL=http://sonarr:8989
       - UN_SONARR_0_API_KEY=32coolcatcharacters
@@ -39,7 +42,13 @@ services:
       - UN_RADARR_0_API_KEY=32coolkatcharacters
 ```
 
-# Data Mount
+And if you're trying to watch a folder, add this `environment:` variable with your folder:
+
+```
+      - UN_FOLDER_0_PATH=/downloads/autoxtract
+```
+
+## Data Mount
 
 :::info Data Mount
 The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
@@ -63,7 +72,7 @@ existing compose; look for `volumes:`. One of these volumes is your download mou
 
 Simply copy the downloads storage volume from your Starr apps or download client to Unpackerr.
 
-# Log File
+## Log File
 
 **Set a log file.** You'll need it to figure out what Unpackerr did. Put it in your download location.
 Example:
@@ -76,7 +85,7 @@ Example:
 Replace `/downloads/unpackerr.log` with `/data/unpackerr.log` if you mounted `/data` in `volumes:`.
 Or whatever download path you mounted; just put it there for ease of finding it.
 
-# More Notes
+## More Notes
 
 :::warning Security Opts
 Do not include this in your compose. It will make Unpackerr not work properly. If you know how
@@ -88,7 +97,7 @@ to adjust caps, go for it, but please don't ask for help without removing this f
 ```
 :::
 
-# Config File
+## Config File
 
 _Very Optional:_
 
