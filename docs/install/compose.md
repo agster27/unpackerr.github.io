@@ -6,6 +6,8 @@ pagination_next: install/configuration
 description: Install Unpackerr with Docker Compose!
 ---
 
+# Install
+
 - Copy the [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
   from the repo.
 - Update the docker-compose.yml file with your environment variable values for your installation.
@@ -18,11 +20,11 @@ description: Install Unpackerr with Docker Compose!
 docker-compose up -d
 ```
 
-Here's an example minimal compose file. This works, and all the defaults should work for you too.
+Here's an example minimal compose file. This works well, and all the defaults should work for you too.
 The [`user:` parameter](https://docs.docker.com/compose/compose-file/05-services/#user) controls
 the uid and gid that the app runs as. The default is root if you don't include it.
 
-Find your [TZ identifier here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
+Find your time zone [`TZ` identifier here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ```yaml
 services:
@@ -42,7 +44,7 @@ services:
       - UN_RADARR_0_API_KEY=32coolkatcharacters
 ```
 
-And if you're trying to watch a folder, add this `environment:` variable with your folder:
+And if you're trying to watch a folder, add this `environment:` variable with _your_ folder path:
 
 ```
       - UN_FOLDER_0_PATH=/downloads/autoxtract
@@ -50,7 +52,7 @@ And if you're trying to watch a folder, add this `environment:` variable with yo
 
 ## Data Mount
 
-:::info Data Mount
+:::info Important
 The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
 Using the same mount path keeps consistency and makes troubleshooting Unpackerr easier.
 Most importantly, it allows Unpackerr to find your files.
