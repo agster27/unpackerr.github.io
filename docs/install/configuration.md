@@ -39,25 +39,29 @@ works for all starr apps, folders, command hooks, and web hooks. Anything that [
 a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L87)
 with double brackets `[[..]]` can be repeated as many times as you'd like.
 
-- Example with two Radarrs and two Folders:
+<details>
+  <summary>Config File example with two Radarrs and two Folders.</summary>
 
-```toml
+```yaml
 [[radarr]]
-url = "http://radarr"
-api_key = "32characters"
+ url = "http://radarr"
+ api_key = "32characters"
 
 [[radarr]]
-url = "http://radarr4k"
-api_key = "32morecharacters"
+ url = "http://radarr4k"
+ api_key = "32morecharacters"
 
 [[folder]]
-path = "/data/downloads/software/"
+ path = "/data/downloads/software/"
 
 [[folder]]
-path = "/data/downloads/games/"
+ path = "/data/downloads/games/"
 ```
 
-- Same example using env variables.
+</details>
+
+<details>
+  <summary>Environment Variable example with two Radarrs and two Folders.</summary>
 
 ```shell
 UN_RADARR_0_URL=http://radarr
@@ -68,7 +72,58 @@ UN_FOLDER_0_PATH=/data/downloads/software/
 UN_FOLDER_1_PATH=/data/downloads/games/
 ```
 
+</details>
+
 ## Global Settings
+
+These values must exist at the top of the config file.
+If you put them anywhere else they may be attached to a `[[header]]` inadvertently.
+When using environment variables, you can simply omit the ones you don't set or change from default.
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+debug        = false
+quiet        = false
+error_stderr = false
+activity     = false
+log_queues   = "1m"
+log_file     = ""
+log_files    = 10
+log_file_mb  = 10
+interval     = "2m"
+start_delay  = "1m"
+retry_delay  = "5m"
+parallel     = 1
+file_mode    = "0644"
+dir_mode     = "0755"
+```
+
+- Using environment variables:
+
+```shell
+TZ=America/New_York
+UN_DEBUG=false
+UN_QUIET=false
+UN_ERROR_STDERR=false
+UN_ACTIVITY=false
+UN_LOG_QUEUES=1m
+UN_LOG_FILE=
+UN_LOG_FILES=10
+UN_LOG_FILE_MB=10
+UN_INTERVAL=2m
+UN_START_DELAY=1m
+UN_RETRY_DELAY=5m
+UN_MAX_RETRIES=3
+UN_PARALLEL=1
+UN_FILE_MODE=0644
+UN_DIR_MODE=0755
+```
+
+</details>
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
@@ -128,6 +183,40 @@ The web server currently only provides prometheus metrics, which you can display
 It provides no UI. This may change in the future. The web server was added in v0.12.0.
 :::
 
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[webserver]
+  metrics = true
+  listen_addr = "0.0.0.0:5656"
+  log_file = ""
+  log_files = 10
+  log_file_mb = 10
+  ssl_cert_file = ""
+  ssl_key_file = ""
+  urlbase = "/"
+  upstreams = [ "127.0.0.1/32", "10.1.2.0/24" ]
+```
+
+- Using environment variables:
+
+```shell
+UN_WEBSERVER_METRICS=true
+UN_WEBSERVER_LISTEN_ADDR=0.0.0.0:5656
+UN_WEBSERVER_LOG_FILE=
+UN_WEBSERVER_LOG_FILES=10
+UN_WEBSERVER_LOG_FILE_MB=10
+UN_WEBSERVER_URLBASE=/
+UN_WEBSERVER_UPSTREAMS=127.0.0.1/32,10.1.2.0/24
+```
+
+</details>
+
+
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 |webserver.metrics|`UN_WEBSERVER_METRICS`|`false` / Set this to true to enable the webserver, and metrics|
@@ -142,6 +231,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 ## Sonarr
 
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[sonarr]]
+  url = "http://127.0.0.1:8989"
+  api_key = "0123456789abcdef0123456789abcdef"
+  paths = ['/downloads']
+  protocols = "torrent"
+  timeout = "10s"
+  delete_delay = "5m"
+  delete_orig = false
+  syncthing = false
+```
+
+- Using environment variables:
+
+```shell
+UN_SONARR_0_URL=http://sonarr:8989
+UN_SONARR_0_API_KEY=
+UN_SONARR_0_PATHS_0=/downloads
+UN_SONARR_0_PROTOCOLS=torrent
+UN_SONARR_0_TIMEOUT=10s
+UN_SONARR_0_DELETE_ORIG=false
+UN_SONARR_0_DELETE_DELAY=5m
+```
+
+</details>
+
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 |sonarr.url|`UN_SONARR_0_URL`|No Default. Something like: `http://localhost:8989`|
@@ -154,6 +274,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 |sonarr.syncthing|`UN_SONARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Radarr
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[radarr]]
+  url = "http://127.0.0.1:7878"
+  api_key = "0123456789abcdef0123456789abcdef"
+  paths = ['/downloads']
+  protocols = "torrent"
+  timeout = "10s"
+  delete_delay = "5m"
+  delete_orig = false
+  syncthing = false
+```
+
+- Using environment variables:
+
+```shell
+UN_RADARR_0_URL=http://radarr:7878
+UN_RADARR_0_API_KEY=0123456789abcdef0123456789abcdef
+UN_RADARR_0_PATHS_0=/downloads
+UN_RADARR_0_PROTOCOLS=torrent
+UN_RADARR_0_TIMEOUT=10s
+UN_RADARR_0_DELETE_ORIG=false
+UN_RADARR_0_DELETE_DELAY=5m
+```
+
+</details>
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
@@ -168,6 +319,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 ## Lidarr
 
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[lidarr]]
+  url = "http://127.0.0.1:8686"
+  api_key = "0123456789abcdef0123456789abcdef"
+  paths = ['/downloads']
+  protocols = "torrent"
+  timeout = "10s"
+  delete_delay = "5m"
+  delete_orig = false
+  syncthing = false
+```
+
+- Using environment variables:
+
+```shell
+UN_LIDARR_0_URL=http://lidarr:8686
+UN_LIDARR_0_API_KEY=0123456789abcdef0123456789abcdef
+UN_LIDARR_0_PATHS_0=/downloads
+UN_LIDARR_0_PROTOCOLS=torrent
+UN_LIDARR_0_TIMEOUT=10s
+UN_LIDARR_0_DELETE_ORIG=false
+UN_LIDARR_0_DELETE_DELAY=5m
+```
+
+</details>
+
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 |lidarr.url|`UN_LIDARR_0_URL`|No Default. Something like: `http://localhost:8686`|
@@ -180,6 +362,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 |lidarr.syncthing|`UN_LIDARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Readarr
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[readarr]]
+  url = "http://127.0.0.1:8787"
+  api_key = "0123456789abcdef0123456789abcdef"
+  paths = ['/downloads']
+  protocols = "torrent"
+  timeout = "10s"
+  delete_delay = "5m"
+  delete_orig = false
+  syncthing = false
+```
+
+- Using environment variables:
+
+```shell
+UN_READARR_0_URL=http://readarr:8787
+UN_READARR_0_API_KEY=0123456789abcdef0123456789abcdef
+UN_READARR_0_PATHS_0=/downloads
+UN_READARR_0_PROTOCOLS=torrent
+UN_READARR_0_TIMEOUT=10s
+UN_READARR_0_DELETE_ORIG=false
+UN_READARR_0_DELETE_DELAY=5m
+```
+
+</details>
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
@@ -194,6 +407,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 ## Whisparr
 
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[whisparr]]
+  url = "http://127.0.0.1:6969"
+  api_key = "0123456789abcdef0123456789abcdef"
+  paths = ['/downloads']
+  protocols = "torrent"
+  timeout = "10s"
+  delete_delay = "5m"
+  delete_orig = false
+  syncthing = false
+```
+
+- Using environment variables:
+
+```shell
+UN_WHISPARR_0_URL=http://whisparr:6969
+UN_WHISPARR_0_API_KEY=0123456789abcdef0123456789abcdef
+UN_WHISPARR_0_PATHS_0=/downloads
+UN_WHISPARR_0_PROTOCOLS=torrent
+UN_WHISPARR_0_TIMEOUT=10s
+UN_WHISPARR_0_DELETE_ORIG=false
+UN_WHISPARR_0_DELETE_DELAY=5m
+```
+
+</details>
+
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
 |whisparr.url|`UN_WHISPARR_0_URL`|No Default. Something like: `http://localhost:8787`|
@@ -206,6 +450,37 @@ It provides no UI. This may change in the future. The web server was added in v0
 |whisparr.syncthing|`UN_WHISPARR_0_SYNCTHING`|`false` / Setting this to true makes unpackerr wait for syncthing to finish|
 
 ## Folder
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[folder]]
+  path = '''/some/folder/to/watch'''
+  extract_path = ''
+  delete_after = "10m"
+  disable_recursion = false
+  delete_files = false
+  delete_original = false
+  disable_log = false
+  move_back = false
+  extract_isos = false
+```
+
+- Using environment variables:
+
+```shell
+UN_FOLDER_0_PATH=/some/folder/to/watch
+UN_FOLDER_0_EXTRACT_PATH=
+UN_FOLDER_0_DELETE_AFTER=10m
+UN_FOLDER_0_DELETE_ORIGINAL=false
+UN_FOLDER_0_DELETE_FILES=false
+UN_FOLDER_0_MOVE_BACK=false
+```
+
+</details>
 
 Folders are a way to watch a folder for things to extract. You can use this to
 monitor your download client's "move to" path if you're not using it with an Starr app.
@@ -223,6 +498,40 @@ monitor your download client's "move to" path if you're not using it with an Sta
 |folder.disable_recursion|`UN_FOLDER_0_DISABLE_RECURSION`|`false` Setting this to true disables extracting archives inside archives|
 
 ## Command Hooks
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[cmdhook]]
+  command = '/my/cool/script' # Path to command or script.
+  shell   = false      # Runs the command inside /bin/sh ('nix) or cmd.exe (Windows).
+  name    = ""         # Provide an optional name for logging.
+  silent  = false      # Hides command output from logs.
+  events  = [1,2,3,4]  # list of event ids to include, [0] == all.
+  exclude = ["lidarr"] # list of apps to exclude, ie. ["radarr", "lidarr"]
+  timeout = "10s"      # You can adjust how long to wait for a server response.
+```
+
+- Using environment variables:
+
+```shell
+UN_CMDHOOK_0_COMMAND=/usr/bin/env
+UN_CMDHOOK_0_NAME=
+UN_CMDHOOK_0_TIMEOUT=10s
+UN_CMDHOOK_0_SILENT=false
+UN_CMDHOOK_0_SHELL=true
+UN_CMDHOOK_0_EXCLUDE_0=lidarr
+UN_CMDHOOK_0_EXCLUDE_1=readarr
+UN_CMDHOOK_0_EVENTS_0=1
+UN_CMDHOOK_0_EVENTS_1=2
+UN_CMDHOOK_0_EVENTS_2=3
+UN_CMDHOOK_0_EVENTS_3=4
+```
+
+</details>
 
 Unpackerr can execute commands (or scripts) before and after an archive extraction.
 The only thing required is a command. Name is optional, and used in logs only.
@@ -242,6 +551,9 @@ on Windows.
 All extraction data is input to the command using environment variables, see example below.
 Extracted files variables names begin with `UN_DATA_FILES_`.
 Try `/usr/bin/env` as an example command to see what variables are available.
+
+<details>
+  <summary>Example Output Variables</summary>
 
 ```none
 UN_DATA_OUTPUT=folder/subfolder_unpackerred
@@ -274,7 +586,53 @@ UN_DATA_ELAPSED=20.365752ms
 UN_DATA_ERROR=
 ```
 
+</details>
+
 ## Webhooks
+
+<details>
+  <summary>Examples</summary>
+
+- Using the config file:
+
+```shell
+[[webhook]]
+  url    = "https://notifiarr.com/api/v1/notification/unpackerr/api_key_from_notifiarr_com"
+  name   = ""          # Set this to hide the URL in logs.
+  silent = false       # Do not log success (less log spam).
+  events = [1,2,3]     # List of event ids to include, 0 == all.
+  ## Advanced Optional Webhook Configuration
+  nickname      = ""   # Used in Discord and Slack templates as bot name, in Telegram as chat_id.
+  channel       = ""   # Passed into templates. Used in Slack templates for destination channel.
+  template_path = ""   # Override internal webhook template for discord.com or other hooks.
+  template      = ""   # Values: notifiarr, discord, telegram, gotify, pushover, slack
+  ignore_ssl    = true # Set this to true to ignore the SSL certificate on the server.
+  timeout       = "9s" # You can adjust how long to wait for a server response.
+  exclude       = ["lidarr"]         # List of apps to exclude, ie. ["radarr", "lidarr"]
+  content_type  = "application/json" # Set this if your template uses another MIME type.
+```
+
+- Using environment variables:
+
+```shell
+UN_WEBHOOK_0_URL=https://a303739bc23bfcfa79b9cf36fd92833x.m.pipedream.net
+UN_WEBHOOK_0_NAME=
+UN_WEBHOOK_0_NICKNAME=Unpackerr
+UN_WEBHOOK_0_CHANNEL=
+UN_WEBHOOK_0_TIMEOUT=10s
+UN_WEBHOOK_0_SILENT=false
+UN_WEBHOOK_0_IGNORE_SSL=false
+UN_WEBHOOK_0_EXCLUDE_0=lidarr
+UN_WEBHOOK_0_EXCLUDE_1=readarr
+UN_WEBHOOK_0_EVENTS_0=1
+UN_WEBHOOK_0_EVENTS_1=2
+UN_WEBHOOK_0_EVENTS_2=3
+UN_WEBHOOK_0_TEMPLATE_PATH=
+UN_WEBHOOK_0_TEMPLATE=
+UN_WEBHOOK_0_CONTENT_TYPE=application/json
+```
+
+</details>
 
 This application can send a `POST` webhook to a URL when an extraction begins, and again
 when it finishes. Configure 1 or more webhook URLs with the parameters below.
