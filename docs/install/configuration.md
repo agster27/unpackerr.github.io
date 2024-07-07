@@ -12,21 +12,34 @@ You should use the data here along with the data in the
 [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
 to paint the full picture of how to configure Unpackerr.
 
-## Config Generator
+## Config
+
+- Setting a log file is strongly recommend. This makes it much easier to troubleshoot problems.
+- To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
+  - Update the new file and restart the container.
+- When using a config file you must uncomment at minimum the `[[header]]` <font color="gray">
+  ex. `[[radarr]]`</font>, `url` and `api_key`.
+- Uncomment means remove the hash `#` at the beginning of the line.
+
+### Generator
 
 [Notifiarr](https://notifiarr.com) hosts a configuration file maker.
 Simply fill in a web form, and click a button to get a working config file.
 
 - **Access the generator here: https://notifiarr.com/unpackerr.php**
 
-## Config File Notes
+### Two+ Instances
 
-- Setting a log file is strongly recommend. This makes it much easier to troubleshoot problems.
-- To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
-- When using a config file you must uncomment at minimum the `[[header]]` (`[[radarr]]`), `url` and `api_key`.
-- Uncomment means remove the hash `#` at the beginning of the line.
-- If you need more than one Starr app, add another `[[header]]` for that app.
-- Example with two Radarrs:
+When adding a second (or third+) instance to the __config file__, you just
+add another `[[header]]` <font color="gray">ex. `[[sonarr]]`</font> and the
+`url`/`api_key`/etc under it. When adding a second instance to the __environment
+variables__, you must increment the `0` to a `1`. And to a `2` if you have 3
+instances. There is no limit to the number of supported instances. This notation
+works for all starr apps, folders, command hooks, and web hooks. Anything that [has
+a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L87)
+with double brackets `[[..]]` can be repeated as many times as you'd like.
+
+- Example with two Radarrs and two Folders:
 
 ```toml
 [[radarr]]
@@ -36,6 +49,12 @@ api_key = "32characters"
 [[radarr]]
 url = "http://radarr4k"
 api_key = "32morecharacters"
+
+[[folder]]
+path = "/data/downloads/software/"
+
+[[folder]]
+path = "/data/downloads/games/"
 ```
 
 - Same example using env variables.
@@ -45,7 +64,10 @@ UN_RADARR_0_URL=http://radarr
 UN_RADARR_0_API_KEY=32characters
 UN_RADARR_1_URL=http://radarr4k
 UN_RADARR_1_API_KEY=32morecharacters
+UN_FOLDER_0_PATH=/data/downloads/software/
+UN_FOLDER_1_PATH=/data/downloads/games/
 ```
+
 ## Global Settings
 
 |Config Name|Variable Name|Default / Note|
@@ -94,6 +116,8 @@ UN_RADARR_0_API_KEY=filepath:/etc/secrets/radarr.txt
 ```
 
 Then store the API key (and only the API key) in `/etc/secrets/radarr.txt`.
+
+_<font color="gray">This feature was added in Unpackerr v0.14.0.</font>_
 :::
 
 ## Webserver

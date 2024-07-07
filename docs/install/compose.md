@@ -49,7 +49,7 @@ services:
 
 And if you're trying to watch a folder, add this `environment:` variable with _your_ folder path:
 
-```
+```yaml
       - UN_FOLDER_0_PATH=/downloads/autoxtract
 ```
 
