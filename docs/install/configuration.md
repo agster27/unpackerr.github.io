@@ -81,7 +81,7 @@ If you put them anywhere else they may be attached to a `[[header]]` inadvertent
 When using environment variables, you can simply omit the ones you don't set or change from default.
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN</b></summary>
 
 - Using the config file:
 
@@ -185,7 +185,7 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_WEBSERVER</b>, Header: <b>[webserver]</b></summary>
 
 - Using the config file:
 
@@ -232,7 +232,7 @@ UN_WEBSERVER_UPSTREAMS=127.0.0.1/32,10.1.2.0/24
 ## Sonarr
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_SONARR_#</b>, Header: <b>[[sonarr]]</b></summary>
 
 - Using the config file:
 
@@ -276,7 +276,7 @@ UN_SONARR_0_DELETE_DELAY=5m
 ## Radarr
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_RADARR_#</b>, Header: <b>[[radarr]]</b></summary>
 
 - Using the config file:
 
@@ -320,7 +320,7 @@ UN_RADARR_0_DELETE_DELAY=5m
 ## Lidarr
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_LIDARR_#</b>, Header: <b>[[lidarr]]</b></summary>
 
 - Using the config file:
 
@@ -364,7 +364,7 @@ UN_LIDARR_0_DELETE_DELAY=5m
 ## Readarr
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_READARR_#</b>, Header: <b>[[readarr]]</b></summary>
 
 - Using the config file:
 
@@ -408,7 +408,7 @@ UN_READARR_0_DELETE_DELAY=5m
 ## Whisparr
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_WHISPARR_#</b>, Header: <b>[[whisparr]]</b></summary>
 
 - Using the config file:
 
@@ -452,7 +452,7 @@ UN_WHISPARR_0_DELETE_DELAY=5m
 ## Folder
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_FOLDER_#</b>, Header: <b>[[folder]]</b></summary>
 
 - Using the config file:
 
@@ -500,7 +500,7 @@ monitor your download client's "move to" path if you're not using it with an Sta
 ## Command Hooks
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_CMDHOOK_#</b>, Header: <b>[[cmdhook]]</b></summary>
 
 - Using the config file:
 
@@ -591,7 +591,7 @@ UN_DATA_ERROR=
 ## Webhooks
 
 <details>
-  <summary>Examples</summary>
+  <summary>Examples. Prefix: <b>UN_WEBHOOK_#</b>, Header: <b>[[webhook]]</b></summary>
 
 - Using the config file:
 
