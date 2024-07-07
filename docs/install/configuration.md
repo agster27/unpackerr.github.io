@@ -20,6 +20,8 @@ to paint the full picture of how to configure Unpackerr.
 - When using a config file you must uncomment at minimum the `[[header]]` <font color="gray">
   ex. `[[radarr]]`</font>, `url` and `api_key`.
 - Uncomment means remove the hash `#` at the beginning of the line.
+- The config file format is [TOML](https://toml.io).
+  - Indentation is not important like YAML files, but it's used for ease of readability.
 
 ### Generator
 
@@ -35,12 +37,12 @@ add another `[[header]]` <font color="gray">ex. `[[sonarr]]`</font> and the
 `url`/`api_key`/etc under it. When adding a second instance to the __environment
 variables__, you must increment the `0` to a `1`. And to a `2` if you have 3
 instances. There is no limit to the number of supported instances. This notation
-works for all starr apps, folders, command hooks, and web hooks. Anything that [has
-a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L87)
-with double brackets `[[..]]` can be repeated as many times as you'd like.
+works for all starr apps, folders, command hooks, and web hooks.
 
 <details>
-  <summary>Config File example with two Radarrs and two Folders.</summary>
+  <summary>Config examples with multiple instances.</summary>
+
+- Config File example with two Radarrs and two Folders.
 
 ```yaml
 [[radarr]]
@@ -58,10 +60,7 @@ with double brackets `[[..]]` can be repeated as many times as you'd like.
  path = "/data/downloads/games/"
 ```
 
-</details>
-
-<details>
-  <summary>Environment Variable example with two Radarrs and two Folders.</summary>
+- Environment Variable example with two Radarrs and two Folders setting the same values as above.
 
 ```shell
 UN_RADARR_0_URL=http://radarr
@@ -74,10 +73,13 @@ UN_FOLDER_1_PATH=/data/downloads/games/
 
 </details>
 
+Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L87)
+with double brackets `[[..]]` can be repeated as many times as you'd like.
+
 ## Global Settings
 
 These values must exist at the top of the config file.
-If you put them anywhere else they may be attached to a `[[header]]` inadvertently.
+If you put them anywhere else they may be attached to a `[header]` inadvertently.
 When using environment variables, you can simply omit the ones you don't set or change from default.
 
 <details>
@@ -100,6 +102,9 @@ retry_delay  = "5m"
 parallel     = 1
 file_mode    = "0644"
 dir_mode     = "0755"
+
+[folders]
+  interval = "0s"
 ```
 
 - Using environment variables:
@@ -121,6 +126,7 @@ UN_MAX_RETRIES=3
 UN_PARALLEL=1
 UN_FILE_MODE=0644
 UN_DIR_MODE=0755
+UN_FOLDERS_INTERVAL=0s
 ```
 
 </details>
@@ -143,7 +149,7 @@ UN_DIR_MODE=0755
 |file_mode|`UN_FILE_MODE`|`0644` / Extracted files are written with this mode|
 |dir_mode|`UN_DIR_MODE`|`0755` / Extracted folders are written with this mode|
 |passwords|`UN_PASSWORD_0`|No default; empty list. Provide a list of RAR passwords to try.|
-|folders.interval|`UN_FOLDERS_INTERVAL`|`1s` / How often poller (if enabled) checks for new folders.|
+|folders.interval|`UN_FOLDERS_INTERVAL`|`1s` / How often poller checks for new folders. Use `1ms` to disable it.|
 
 ## Secrets and Passwords
 
@@ -183,7 +189,6 @@ The web server currently only provides prometheus metrics, which you can display
 It provides no UI. This may change in the future. The web server was added in v0.12.0.
 :::
 
-
 <details>
   <summary>Examples. Prefix: <b>UN_WEBSERVER</b>, Header: <b>[webserver]</b></summary>
 
@@ -215,7 +220,6 @@ UN_WEBSERVER_UPSTREAMS=127.0.0.1/32,10.1.2.0/24
 ```
 
 </details>
-
 
 |Config Name|Variable Name|Default / Note|
 |---|---|---|
