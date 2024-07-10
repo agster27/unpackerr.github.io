@@ -16,7 +16,7 @@ to paint the full picture of how to configure Unpackerr.
 
 - Setting a log file is strongly recommend. This makes it much easier to troubleshoot problems.
 - To use a config file in Docker, mount `/config` to the container and Unpackerr will write a config file.
-  - Update the new file and restart the container.
+  - Update the new file at `/config/unpackerr.conf` and restart the container.
 - When using a config file you must uncomment at minimum the `[[header]]` <font color="gray">
   ex. `[[radarr]]`</font>, `url` and `api_key`.
 - Uncomment means remove the hash `#` at the beginning of the line.
@@ -87,7 +87,7 @@ When using environment variables, you can simply omit the ones you don't set or 
 
 - Using the config file:
 
-```shell
+```json
 debug        = false
 quiet        = false
 error_stderr = false
@@ -109,7 +109,7 @@ dir_mode     = "0755"
 
 - Using environment variables:
 
-```shell
+```json
 TZ=America/New_York
 UN_DEBUG=false
 UN_QUIET=false
@@ -165,7 +165,7 @@ You may store any string parameter (except time intervals) into a separate file
 by setting the value to `filepath:/path/to/file.txt`. In other words, if you want
 your Radarr API key to be read from a separate file, instead of storing it directly
 in the config file or environment variables you can do this:
-```toml
+```json
 [[radarr]]
   url = "https://some.url/radarr"
   api_key = "filepath:/etc/secrets/radarr.txt"
@@ -194,7 +194,7 @@ It provides no UI. This may change in the future. The web server was added in v0
 
 - Using the config file:
 
-```shell
+```json
 [webserver]
   metrics = true
   listen_addr = "0.0.0.0:5656"
@@ -240,7 +240,7 @@ UN_WEBSERVER_UPSTREAMS=127.0.0.1/32,10.1.2.0/24
 
 - Using the config file:
 
-```shell
+```json
 [[sonarr]]
   url = "http://127.0.0.1:8989"
   api_key = "0123456789abcdef0123456789abcdef"
@@ -284,7 +284,7 @@ UN_SONARR_0_DELETE_DELAY=5m
 
 - Using the config file:
 
-```shell
+```json
 [[radarr]]
   url = "http://127.0.0.1:7878"
   api_key = "0123456789abcdef0123456789abcdef"
@@ -328,7 +328,7 @@ UN_RADARR_0_DELETE_DELAY=5m
 
 - Using the config file:
 
-```shell
+```json
 [[lidarr]]
   url = "http://127.0.0.1:8686"
   api_key = "0123456789abcdef0123456789abcdef"
@@ -372,7 +372,7 @@ UN_LIDARR_0_DELETE_DELAY=5m
 
 - Using the config file:
 
-```shell
+```json
 [[readarr]]
   url = "http://127.0.0.1:8787"
   api_key = "0123456789abcdef0123456789abcdef"
@@ -416,7 +416,7 @@ UN_READARR_0_DELETE_DELAY=5m
 
 - Using the config file:
 
-```shell
+```json
 [[whisparr]]
   url = "http://127.0.0.1:6969"
   api_key = "0123456789abcdef0123456789abcdef"
@@ -460,7 +460,7 @@ UN_WHISPARR_0_DELETE_DELAY=5m
 
 - Using the config file:
 
-```shell
+```json
 [[folder]]
   path = '''/some/folder/to/watch'''
   extract_path = ''
@@ -475,7 +475,7 @@ UN_WHISPARR_0_DELETE_DELAY=5m
 
 - Using environment variables:
 
-```shell
+```json
 UN_FOLDER_0_PATH=/some/folder/to/watch
 UN_FOLDER_0_EXTRACT_PATH=
 UN_FOLDER_0_DELETE_AFTER=10m
@@ -508,7 +508,7 @@ monitor your download client's "move to" path if you're not using it with an Sta
 
 - Using the config file:
 
-```shell
+```json
 [[cmdhook]]
   command = '/my/cool/script' # Path to command or script.
   shell   = false      # Runs the command inside /bin/sh ('nix) or cmd.exe (Windows).
@@ -521,7 +521,7 @@ monitor your download client's "move to" path if you're not using it with an Sta
 
 - Using environment variables:
 
-```shell
+```json
 UN_CMDHOOK_0_COMMAND=/usr/bin/env
 UN_CMDHOOK_0_NAME=
 UN_CMDHOOK_0_TIMEOUT=10s
@@ -599,7 +599,7 @@ UN_DATA_ERROR=
 
 - Using the config file:
 
-```shell
+```json
 [[webhook]]
   url    = "https://notifiarr.com/api/v1/notification/unpackerr/api_key_from_notifiarr_com"
   name   = ""          # Set this to hide the URL in logs.
@@ -618,7 +618,7 @@ UN_DATA_ERROR=
 
 - Using environment variables:
 
-```shell
+```json
 UN_WEBHOOK_0_URL=https://a303739bc23bfcfa79b9cf36fd92833x.m.pipedream.net
 UN_WEBHOOK_0_NAME=
 UN_WEBHOOK_0_NICKNAME=Unpackerr
