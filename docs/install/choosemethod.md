@@ -6,41 +6,30 @@ pagination_next: null
 description: Choose an Unpackerr install method.
 ---
 
-It's generally recommended to install Unpackerr the same way you installed your
-Starr or download apps. If your existing infrastructure exists in Docker, then
-Unpackerr should probably live in Docker too.
+We recommended to installing Unpackerr the same way you installed your
+Starr or download apps. If your existing infrastructure exists in Docker,
+then Unpackerr should probably live in Docker too.
 
 If you're using the **Folder Watch** feature, then we recommend installing
 Unpackerr native (not Docker) on the server where the files-to-be-extracted
-reside.
-
-:::caution Docker Folder Watcher
-The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to identify
-changes to the folder. A folder-poller is automatically started when run in
-Docker because `inotify` is unreliable.
-
-Watching folders in Docker will cause Unpackerr to constantly poll the
-watched-folder for changes. Unpackerr cannot determine when a download is
-finished downloading while running in Docker because `inotify` is not reliable.
-Make sure to set the `start_delay` high enough to avoid beginning extractions
-while files are still being downloaded.
-
-**Alternatively, run Unpackerr as a native service instead of in Docker.**
-:::
+reside. Read more about that on the [Docker page](docker#folder-watcher).
 
 ## Instructions Available
 
-:::tip CPU Hog
-Unpackerr uses a lot CPU, and tends not to work well when running on smaller systems like Synology NAS devices.
-Running Unpackerr on a system with a large CPU is ideal to avoid system performance degradation.
-:::
-
-- [Docker](/docs/install/docker): [Compose](/docs/install/compose), [unRAID](/docs/install/unraid),
-    [TrueNAS Scale](/docs/install/truenas-scale)
+- [Docker](/docs/install/docker): [Compose](/docs/install/compose),
+    [unRAID](/docs/install/unraid), [TrueNAS Scale](/docs/install/truenas-scale)
 - [FreeBSD](/docs/install/freebsd)
-- [Linux: with root](/docs/install/linux), [without root (seedbox)](/docs/install/seedbox)
+- [Linux: with root](/docs/install/linux), [without root / seedbox](/docs/install/seedbox)
 - [macOS](/docs/install/macos)
 - [Windows](/docs/install/windows)
+
+:::tip CPU Hog
+Unpackerr uses a lot CPU while extracting, and tends not to work well when
+running on smaller systems like Synology NAS devices. Running Unpackerr on
+a system with a large CPU is ideal to avoid system performance degradation.
+The application uses only a few CPU cycles at idle to poll Starr apps and/or
+watch folders.
+:::
 
 ---
 

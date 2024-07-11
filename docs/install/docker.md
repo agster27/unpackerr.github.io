@@ -33,7 +33,7 @@ also mount `/mnt/storage/downloads:/downloads` on your Unpackerr container. If y
 **Make sure Unpackerr can find the downloads in the same place that Sonarr and Radarr find them.**
 :::
 
-## Docker Example with config file
+## Example with config file
 
 - Copy the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
   from the repo, or [generate one](https://notifiarr.com/unpackerr.php).
@@ -67,6 +67,12 @@ Make sure to set the correct uid and gid with the `--user` parameter. Example:
 docker run --user 1000:100 -d -v /mnt/data:/data -v /mnt/config:/config golift/unpackerr
 ```
 
+**Replace 1000:100 with the correct uid:gid for your environment.**
+One of them must provide write access to your archives.
+
+When using compose, add `user: 1000:100` to the service definition.
+Find examples in the [Docker Compose instruction](compose).
+
 ### Hotio
 
 The primary difference between the golift and hotio containers is how you set the uid and gid.
@@ -78,3 +84,19 @@ Pass the `PUID` and `PGID` environment variables when using hotio's container. E
 # This commands runs hotio/unpackerr with UID 1000 and GID 100.
 docker run -e PUID=1000 -e PGID=100 -d -v /mnt/data:/data -v /mnt/config:/config hotio/unpackerr
 ```
+
+## Folder Watcher
+
+Watching folders in Docker will cause Unpackerr to constantly poll the
+watched-folder for changes at a default rate of `1s` (1 second).
+
+The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to identify
+changes to the watched folder. A folder-poller is automatically started when
+run in Docker because `inotify` is unreliable. Disable the folder poller
+(and rely on `inotify` only) by setting `folders.interval` to `1ms`.
+
+If Unpackerr has trouble determining when downloads are finished, set
+`start_delay` high enough to avoid beginning extracting files that are
+still being transferred.
+
+**Alternatively, run Unpackerr as a native service instead of in Docker.**
