@@ -12,8 +12,10 @@ import ArchiveAccess from './includes/archiveaccess.md';
 
 Learn how to install Unpackerr on your linux shell without root.
 
-1. Download and extract a binary from the [releases](https://github.com/Unpackerr/unpackerr/releases) page.
-1. Rename the file to `unpackerr` and make it executable: `chmod +x unpackerr`
+1. Download a binary from the [latest release](https://github.com/Unpackerr/unpackerr/releases/latest).
+  The `unpackerr.amd64.linux.gz` file is almost certainly what you want to grab,
+  so start there if you're not sure.
+1. Extract the gz file with `gunzip` (or whatever), rename it to `unpackerr` and make it executable: `chmod +x unpackerr`
 1. Download the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example),
    or [generate one](https://notifiarr.com/unpackerr.php).
 1. Edit config file to suit your needs: `nano unpackerr.conf`
