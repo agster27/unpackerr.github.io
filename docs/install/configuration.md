@@ -670,6 +670,8 @@ Works great with [notifiarr.com](https://notifiarr.com). You can use
 
 Event IDs are needed/used in command hooks and webhooks.
 
-`0` = all, `1` = queued, `2` = extracting,
-`3` = extract failed, `4` = extracted, `5` = imported,
-`6` = deleting, `7` = delete failed, `8` = deleted
+`0` = all, `1` = queued, `2` = extracting, `3` = extract failed, `4` = extracted,
+`5` = imported, `6` = deleting, `7` = delete failed, `8` = deleted, `9` = nothing extracted
+
+The extracted nothing event (9) only fires for the folder watcher, not starr apps.
+
