@@ -8,7 +8,7 @@ description: Install Unpackerr on a FreeBSD server.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 
-1. Download a package from the [Releases](https://github.com/Unpackerr/unpackerr/releases) page.
+1. Download a package from the [latest release](https://github.com/Unpackerr/unpackerr/releases/latest).
 1. Install it with `pkg add -f` (the force flag is required because the package has
    [a bug](https://github.com/Unpackerr/unpackerr/issues/352))
 1. Edit the config file at `/etc/unpackerr/unpackerr.conf`,
