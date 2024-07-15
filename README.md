@@ -57,7 +57,7 @@ rbenv install 3.2.2
 eval "$(rbenv init -)"
 rbenv shell 3.2.2
 gem install --no-document mdl
-mdl docs
+mdl -g docs
 ```
 
 Seriously, run mdl before committing.
