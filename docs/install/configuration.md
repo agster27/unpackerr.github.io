@@ -113,7 +113,7 @@ Then store the API key (and only the API key) in `/etc/secrets/radarr.txt`.
 _<font color="gray">This feature was added in Unpackerr v0.14.0.</font>_
 :::
 
-<!-- The following content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config -->
+<!-- This content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config -->
 <Generated/>
 
 ## Event IDs
