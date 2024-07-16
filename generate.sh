@@ -3,7 +3,7 @@
 # The generator: https://github.com/Unpackerr/unpackerr/tree/main/init/config
 
 set -e
-GOPRIVATE=github.com/Unpackerr/unpackerr/*
+go env -w GOPRIVATE=github.com/Unpackerr/*
 
 pushd "$(dirname -- "${BASH_SOURCE[0]}")/docs/install"
 go run github.com/Unpackerr/unpackerr/init/config@main docs
