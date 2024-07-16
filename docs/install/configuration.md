@@ -77,7 +77,7 @@ UN_FOLDER_1_PATH=/data/downloads/games/
 
 </details>
 
-Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L87)
+Anything that [has a header](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example#L99)
 with double brackets `[[..]]` can be repeated as many times as you'd like.
 
 <!-- The Global content is generated from here: https://github.com/Unpackerr/unpackerr/tree/main/init/config -->
