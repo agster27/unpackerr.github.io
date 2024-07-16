@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "./generate.sh && docusaurus start",
-    "build": "./generate.sh && docusaurus build",
+    "build": "pwd && ./generate.sh && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
