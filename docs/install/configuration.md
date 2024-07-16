@@ -127,4 +127,6 @@ The 'nothing extracted' event (9) only fires for the folder watcher, not starr a
 
 ---
 
-_<font color="gray" style={{float: 'right'}}>This page is [generated automatically](https://github.com/Unpackerr/unpackerr/tree/main/init/config).</font>_
+<font color="gray" style={{'float': 'right', 'font-style': 'italic'}}>
+  This page is [generated automatically](https://github.com/Unpackerr/unpackerr/tree/main/init/config).
+</font>
