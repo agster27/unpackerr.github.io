@@ -27,7 +27,7 @@ curl -s https://golift.io/repo.sh | sudo bash -s - unpackerr
 ```
 
 After install, edit the config file, or
-[generate one](https://notifiarr.com/unpackerr.php) and start the service:
+[generate one](https://notifiarr.com/unpackerr) and start the service:
 
 ```shell
 sudo nano /etc/unpackerr/unpackerr.conf

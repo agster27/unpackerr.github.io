@@ -36,7 +36,7 @@ also mount `/mnt/storage/downloads:/downloads` on your Unpackerr container. If y
 ## Example with config file
 
 - Copy the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
-  from the repo, or [generate one](https://notifiarr.com/unpackerr.php).
+  from the repo, or [generate one](https://notifiarr.com/unpackerr).
 - Then grab the image from docker hub and run it using an overlay for the config file's directory.
 - The config file must be at `/config/unpackerr.conf`.
 - Recommend bind-mounting `/config` as an app-data directory. Example Follows.

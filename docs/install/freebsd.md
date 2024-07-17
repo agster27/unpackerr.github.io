@@ -12,7 +12,7 @@ import ArchiveAccess from './includes/archiveaccess.md';
 1. Install it with `pkg add -f` (the force flag is required because the package has
    [a bug](https://github.com/Unpackerr/unpackerr/issues/352))
 1. Edit the config file at `/etc/unpackerr/unpackerr.conf`,
-   or [generate one](https://notifiarr.com/unpackerr.php) and start it.
+   or [generate one](https://notifiarr.com/unpackerr) and start it.
 1. Not many folks use FreeBSD, but we can try to help if you drop by the [Discord](https://golift.io/discord).
 
 <ArchiveAccess />

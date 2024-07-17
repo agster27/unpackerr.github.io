@@ -9,7 +9,7 @@ description: Install Unpackerr with Docker Compose!
 # Install
 
 - Copy the [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
-  from the repo.
+  from the repo or [generate one](https://notifiarr.com/unpackerr).
 - Update the docker-compose.yml file with your environment variable values for your installation.
 - Remove variables you did not change; the defaults are found on the Configuration page.
 - Again, remove the variables you don't set or change. You can always add them back later.

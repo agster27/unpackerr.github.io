@@ -24,7 +24,7 @@ A default Windows install runs from `C:\`; if you installed Windows in another l
 - Uncomment `log_file` (remove the `#`) and set it as shown here:
   - `log_file = 'C:\ProgramData\unpackerr\logs\unpackerr.log'`
 - Edit the rest of the config to suit your system,
-  or [generate one](https://notifiarr.com/unpackerr.php) and save the file.
+  or [generate one](https://notifiarr.com/unpackerr) and save the file.
 - Click the systray icon again and select `Quit`. Then open the app again.
 - View the logs by clicking the systray icon and `Logs` -> `View`.
 - Make a shortcut to the application in your Startup menu to run it when you login.

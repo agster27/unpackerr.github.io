@@ -18,7 +18,7 @@ Learn how to install Unpackerr on your linux shell without root.
 1. Extract the gz file with `gunzip` (or whatever),
   rename it to `unpackerr` and make it executable: `chmod +x unpackerr`
 1. Download the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example),
-   or [generate one](https://notifiarr.com/unpackerr.php).
+   or [generate one](https://notifiarr.com/unpackerr).
 1. Edit config file to suit your needs: `nano unpackerr.conf`
 1. Put both on your Linux shell server, in an `~/unapckerr/` folder.
 1. Run Unpackerr in the background, `screen` is the easiest way to do so.
