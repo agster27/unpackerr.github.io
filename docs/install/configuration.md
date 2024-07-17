@@ -8,6 +8,7 @@ description: Unpackerr configurations explained.
 
 import Generated from './generated/index.md';
 import Global from './generated/global.md';
+import Footer from './generated/footer.md';
 
 This is where to learn what each config item is, the default
 values for each item, and the name to use in an environment variable.
@@ -127,6 +128,4 @@ The 'nothing extracted' event (9) only fires for the folder watcher, not starr a
 
 ---
 
-<font color="gray" style={{'float': 'right', 'font-style': 'italic'}}>
-  This page is [generated automatically](https://github.com/Unpackerr/unpackerr/tree/main/init/config).
-</font>
+<Footer />

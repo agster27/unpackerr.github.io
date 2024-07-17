@@ -1,18 +1,8 @@
-#!/bin/bash
 # The beginning: https://github.com/Unpackerr/unpackerr/pull/459
 # The generator: https://github.com/Unpackerr/unpackerr/tree/main/init/config
-
-# Bail on errors.
-set -e
 
 # We do this because go cache will download an older version.
 go env -w 'GOPRIVATE=github.com/Unpackerr/*'
 
-# Move into the directory <this script>/docs/install.
-pushd "$(dirname -- "${BASH_SOURCE[0]}")/docs/install"
-
 # Run the config generator directly from github.
-go run github.com/Unpackerr/unpackerr/init/config@main --type documentation
-
-# Go back to the directory we were in when we started.
-popd
+go run github.com/Unpackerr/unpackerr/init/config@main --type docusaurus --output docs/install/generated
