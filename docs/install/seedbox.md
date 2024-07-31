@@ -1,14 +1,12 @@
 ---
 id: seedbox
-title: Seedbox
+title: Seedbox Install
 pagination_prev: install/linux
 pagination_next: install/configuration
 description: Install Unpackerr on a Linux server without root.
 ---
 
 import ArchiveAccess from './includes/archiveaccess.md';
-
-# Linux Seedbox
 
 Learn how to install Unpackerr on your linux shell without root.
 
@@ -24,6 +22,8 @@ Learn how to install Unpackerr on your linux shell without root.
 1. Run Unpackerr in the background, `screen` is the easiest way to do so.
 
 <ArchiveAccess />
+
+## Install Script
 
 Here's a simple script that automates the above steps.
 You should take some time to understand how [screen](https://wiki.archlinux.org/title/GNU_Screen)
@@ -75,7 +75,10 @@ screen -dmS unpackerr $HOME/unpackerr/unpackerr -c $HOME/unpackerr/unpackerr.con
   crontab -
 ```
 
-After you run this script, and exit `nano`, Unpackerr will be running in the background.
+After you run this script, and exit `nano` (with `ctrl+x`), Unpackerr will be running in the background.
+
+## Screen Usage
+
 If you're not familiar with `screen`, here's a quick primer:
 
 - Run `screen -r` to re-attach Unpackerr's screen to your terminal.

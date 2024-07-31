@@ -8,7 +8,7 @@ module.exports = {
         'install/freebsd',
         'install/macos',
         'install/windows',
-        {"Linux": [ 'install/linux',  'install/seedbox']},
+        {"Linux": [ 'install/linux', 'install/archlinux', 'install/seedbox']},
         'install/configuration',
       ]
     },
