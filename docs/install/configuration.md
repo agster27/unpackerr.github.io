@@ -12,9 +12,9 @@ import Footer from './generated/footer.md';
 
 This is where to learn what each config item is, the default
 values for each item, and the name to use in an environment variable.
-You should use the data here along with the data in the
-[example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
-to paint the full picture of how to configure Unpackerr.
+Expand the blue sections to see excerpts from the
+[example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
+and [example config](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example) files.
 
 ## Config
 
