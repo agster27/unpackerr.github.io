@@ -6,7 +6,10 @@ pagination_next: install/configuration
 description: Install Unpackerr with Docker Compose!
 ---
 
-# Install
+import ConfigFile from './includes/dockerconfigfile.md';
+import DataMount from './includes/dockerdatamount.md';
+
+# Compose Install
 
 - Copy the [example docker-compose.yml](https://github.com/Unpackerr/unpackerr/blob/main/examples/docker-compose.yml)
   from the repo or [generate one](https://notifiarr.com/unpackerr).
@@ -55,25 +58,7 @@ And if you're trying to watch a folder, add this `environment:` variable with _y
 
 ## Data Mount
 
-:::info Important
-The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
-Using the same mount path keeps consistency and makes troubleshooting Unpackerr easier.
-Most importantly, it allows Unpackerr to find your files.
-
-This means that if you mount `/mnt/storage/downloads:/downloads` on your Starr apps you should
-also mount `/mnt/storage/downloads:/downloads` on your Unpackerr container. If you mount
-`/mnt/user/data:/data` on your Starr apps, mount the same path on Unpackerr.
-**Make sure Unpackerr can find the downloads in the same place that Sonarr and Radarr find them.**
-:::
-
-This is the most important part. Look at your download client (like Qbit), Sonarr and Radarr in your
-existing compose; look for `volumes:`. One of these volumes is your download mount. It's usually
-`/data` or `/downloads` and looks like this:
-
-```yaml
-    volumes:
-      - /mnt/storage/downloads:/downloads
-```
+<DataMount />
 
 Simply copy the downloads storage volume from your Starr apps or download client to Unpackerr.
 
@@ -92,7 +77,7 @@ Or whatever download path you mounted; just put it there for ease of finding it.
 
 ## More Notes
 
-:::warning Security Opts
+:::danger Security Opts
 Do not include this in your compose. It will make Unpackerr not work properly. If you know how
 to adjust caps, go for it, but please don't ask for help without removing this first:
 
@@ -104,14 +89,15 @@ to adjust caps, go for it, but please don't ask for help without removing this f
 
 ## Config File
 
-_Very Optional:_
+You may also use a config file with or instead of environment variables.
+**This section is optional and generally not recommended for compose users.**
 
-You may also use a config file with or instead of environment variables. Name the file `unpackerr.conf`
-and mount the folder it's in to `/config`, so the file becomes available at `/config/unpackerr.conf`.
-Here's an example volume mount. You need one like this that ends with `/config`. Put the file in the
-folder on the left side.
+<ConfigFile />
 
 ```yaml
     volumes:
       - /mnt/appdata/unpackerr:/config
 ```
+You should have a volume like the one above. It must end with `:/config`.
+Put the `unpackerr.conf` file in the folder on the left side,
+or edit the file unpackerr writes after you start it.

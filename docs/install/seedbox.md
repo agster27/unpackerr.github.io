@@ -1,6 +1,6 @@
 ---
 id: seedbox
-title: Seedbox Install
+title: Seedbox
 pagination_prev: install/linux
 pagination_next: install/configuration
 description: Install Unpackerr on a Linux server without root.
@@ -8,7 +8,9 @@ description: Install Unpackerr on a Linux server without root.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 
-Learn how to install Unpackerr on your linux shell without root.
+# Seedbox Install
+
+**These directions explain how to install Unpackerr on your linux shell without root.**
 
 1. Download a binary from the [latest release](https://github.com/Unpackerr/unpackerr/releases/latest).
   The `unpackerr.amd64.linux.gz` file is almost certainly what you want to grab,

@@ -1,6 +1,6 @@
 ---
 id: archlinux
-title: Arch Linux Install
+title: Arch Linux
 pagination_prev: install/choosemethod
 pagination_next: install/configuration
 description: Install Unpackerr on an Arch Linux server.
@@ -8,6 +8,8 @@ description: Install Unpackerr on an Arch Linux server.
 
 import ArchiveAccess from './includes/archiveaccess.md';
 import Permissions from './includes/linuxpermissions.md';
+
+# Arch Linux Install
 
 :::info Root Access
 This installation method requires root. If you don't have root on your shell,
@@ -19,6 +21,8 @@ for each release. Download the `zst` package for your architecture from the
 [releases page](https://github.com/Unpackerr/unpackerr/releases/latest)
 and install it with `pacman -U <file or url>`. Alternatively, you can build
 it yourself using the [public AUR](https://aur.archlinux.org/packages/unpackerr).
+
+## Automatically
 
 If you don't want to bother figuring out which file you need, use the
 [install.sh](https://github.com/Unpackerr/unpackerr/blob/main/init/install.sh) script.

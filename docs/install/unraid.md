@@ -6,7 +6,7 @@ pagination_next: install/configuration
 description: Install Unpackerr on your unRAID server!
 ---
 
-## Install
+# unRAID Install
 
 Unpackerr is available in the
 [Community Applications](https://github.com/selfhosters/unRAID-CA-templates/blob/main/templates/unpackerr.xml)

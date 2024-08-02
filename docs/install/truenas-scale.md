@@ -6,7 +6,7 @@ pagination_next: install/configuration
 description: Install Unpackerr on TrueNAS Scale using TrueCharts.
 ---
 
-# TrueNAS Scale Installation
+# TrueNAS Scale Install
 
 ## TrueCharts
 

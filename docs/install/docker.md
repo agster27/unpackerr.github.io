@@ -6,13 +6,45 @@ pagination_next: install/configuration
 description: Install Unpackerr using Docker!
 ---
 
+import ConfigFile from './includes/dockerconfigfile.md';
+import DataMount from './includes/dockerdatamount.md';
+
 # Docker Installation
+
+If you're using Docker Compose, this page may still contain valuable information for you. Please read it.
+
+## Availability
+
+Images are available on DockerHub and GHCR.
+
+### DockerHub
+
+GoLift software has a [Docker Open Source Sponsorship](https://docs.docker.com/trusted-content/dsos-program/).
+That means there are **no pull limits for any [`golift/*` image on Docker Hub](https://hub.docker.com/u/golift).**
+Even if you're not logged in.
 
 This project builds automatically in [Docker Cloud](https://hub.docker.com/r/golift/unpackerr) and creates
 [ready-to-use multi-architecture images](https://hub.docker.com/r/golift/unpackerr/tags) images.
 The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpackerr/unpackerr/releases).
 
-## Docker Example
+- Pull the DockerHub image with this command:
+  ```shell
+  docker pull golift/unpackerr:latest
+  ```
+
+### GHCR
+
+GitHub Actions also builds a Docker image and stores it in the
+[GitHub container registry](https://github.com/Unpackerr/unpackerr/pkgs/container/unpackerr).
+This image is effectively identical to the DockerHub version; use whichever you prefer.
+The `latest` tag is always a [tagged release on GitHub](https://github.com/Unpackerr/unpackerr/releases).
+
+- Pull the GHCR image with this command:
+  ```
+  docker pull ghcr.io/unpackerr/unpackerr:latest
+  ```
+
+## Example
 
 ```shell
 docker pull golift/unpackerr
@@ -22,30 +54,19 @@ docker run -d -v /mnt/HostDownloads:/downloads \
 docker logs <container id from docker run>
 ```
 
-:::warning Data Mount
-The `/data` or `/downloads` mount you use for Starr apps should be set the same for Unpackerr.
-Using the same mount path keeps consistency and makes troubleshooting Unpackerr easier.
-Most importantly, it allows Unpackerr to find your files.
+## Config File Example
 
-This means that if you mount `/mnt/storage/downloads:/downloads` on your Starr apps you should
-also mount `/mnt/storage/downloads:/downloads` on your Unpackerr container. If you mount
-`/mnt/user/data:/data` on your Starr apps, mount the same path on Unpackerr.
-**Make sure Unpackerr can find the downloads in the same place that Sonarr and Radarr find them.**
-:::
-
-## Example with config file
-
-- Copy the [example config file](https://github.com/Unpackerr/unpackerr/blob/main/examples/unpackerr.conf.example)
-  from the repo, or [generate one](https://notifiarr.com/unpackerr).
-- Then grab the image from docker hub and run it using an overlay for the config file's directory.
-- The config file must be at `/config/unpackerr.conf`.
-- Recommend bind-mounting `/config` as an app-data directory. Example Follows.
+<ConfigFile />
 
 ```shell
 docker pull golift/unpackerr
 docker run -d -v /mnt/HostDownloads:/downloads -v /folder/with/config/file:/config golift/unpackerr
 docker logs <container id from docker run>
 ```
+
+## Data Mount
+
+<DataMount />
 
 ## More Dockers
 
@@ -90,10 +111,10 @@ docker run -e PUID=1000 -e PGID=100 -d -v /mnt/data:/data -v /mnt/config:/config
 Watching folders in Docker will cause Unpackerr to constantly poll the
 watched-folder for changes at a default rate of `1s` (1 second).
 
-The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to identify
-changes to the watched folder. A folder-poller is automatically started when
-run in Docker because `inotify` is unreliable. Disable the folder poller
-(and rely on `inotify` only) by setting `folders.interval` to `1ms`.
+The Folder Watch feature uses `inotify` (a.k.a. `fsnotify`) to identify changes to the
+watched folder. A folder-poller is automatically started when run in Docker because
+`inotify` is unreliable. Disable the folder poller (and rely on `inotify` only) by
+setting `folders.interval` (`UN_FOLDERS_INTERVAL`) to `1ms`.
 
 If Unpackerr has trouble determining when downloads are finished, set
 `start_delay` high enough to avoid beginning extracting files that are
