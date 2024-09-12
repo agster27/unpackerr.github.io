@@ -59,8 +59,8 @@ section of the unraid template after enabling the `Advanced` view.
 You must make these match your starr app so hard links work correctly.
 **Other containers, use env variables such as `PUID` and `PGID`, but the
 Go Lift unpackerr container does not use these.**
-e.g. If Sonarr has `PUID` of `1000` and `PGID` of `100`, then you must
-add **`--user 1000:100`** to `Extra Parameters` as shown below.
+e.g. If Sonarr has `PUID` of `99` and `PGID` of `100`, then you must
+add **`--user 99:100`** to `Extra Parameters` as shown below.
 
 ![](/img/screenshots/unraid/extraparameters.png "extra parameters")
 
