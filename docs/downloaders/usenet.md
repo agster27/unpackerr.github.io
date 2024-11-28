@@ -20,7 +20,8 @@ Generally Unpackerr is not required for Sabnzbd.
 
 ## NZBGet
 
-This is depressing, but...NZBGet is no longer developed.
+NZBGET is back being developed since 2023. 
+https://nzbget.com/
 
 ## Easynews
 
